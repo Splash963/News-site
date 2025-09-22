@@ -22,6 +22,11 @@
             color: white !important;
         }
 
+        .navbar-brand {
+            padding: 20px;
+            font-weight: bold;
+            font-family: 'Arimo', sans-serif;
+        }
 
 
         @media (max-width: 768px) {
@@ -45,41 +50,50 @@
     </style>
 </head>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid navbar-bg">
-        <button class="navbar-toggler mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse container" id="navbarSupportedContent">
-            <ul class="navbar-nav w-100 d-flex justify-content-between text-center">
-                <li class="nav-item flex-fill">
-                    <a class="nav-link active" href="#">Home</a>
-                </li>
-                <li class="nav-item flex-fill">
-                    <a class="nav-link" href="#">News</a>
-                </li>
-                <li class="nav-item flex-fill">
-                    <a class="nav-link" href="#">Politics</a>
-                </li>
-                <li class="nav-item flex-fill">
-                    <a class="nav-link" href="#">Crime</a>
-                </li>
-                <li class="nav-item flex-fill">
-                    <a class="nav-link" href="#">Sports</a>
-                </li>
-                <li class="nav-item flex-fill">
-                    <a class="nav-link" href="#">World News</a>
-                </li>
-                <li class="nav-item flex-fill">
-                    <a class="nav-link" href="#">Business</a>
-                </li>
-                <li class="nav-item flex-fill">
-                    <a class="nav-link" href="#">Education</a>
-                </li>
-                <li class="nav-item flex-fill">
-                    <a class="nav-link" href="#">Health</a>
-                </li>
-            </ul>
+<div class="sticky-top">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid justify-content-center">
+            <span class="navbar-brand mb-0 fs-1">News.lk</span>
         </div>
-    </div>
-</nav>
+        @include('layouts.line')
+    </nav>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid navbar-bg">
+            <button class="navbar-toggler mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse container" id="navbarSupportedContent">
+                <ul class="navbar-nav w-100 d-flex justify-content-between text-center">
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link" href="#">News</a>
+                    </li>
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link" href="#">Politics</a>
+                    </li>
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link" href="#">Crime</a>
+                    </li>
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link" href="#">Sports</a>
+                    </li>
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link" href="#">World News</a>
+                    </li>
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link" href="#">Business</a>
+                    </li>
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link" href="#">Education</a>
+                    </li>
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link" href="#">Health</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
