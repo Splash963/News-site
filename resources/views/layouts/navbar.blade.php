@@ -1,10 +1,6 @@
 <head>
     @vite('resources/css/home.css')
     <style>
-        .navbar-bg {
-            background-color: white;
-        }
-
         .nav-link {
             color: black;
             font-family: Arimo, sans-serif;
@@ -29,9 +25,6 @@
 
 
         @media (max-width: 768px) {
-            .navbar-bg {
-                background-color: white;
-            }
 
             .nav-link {
                 color: black;
@@ -57,7 +50,7 @@
         <button class="navbar-toggler mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse container" id="navbarSupportedContent">
             <ul class="navbar-nav w-100 d-flex justify-content-between text-center">
                 <li class="nav-item flex-fill">
                     <a class="nav-link active" href="#">Home</a>
