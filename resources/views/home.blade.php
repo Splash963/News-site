@@ -21,7 +21,7 @@
                 <div class="row">
 
                     <!-- Recent News Section -->
-                    <div class="col-lg-3">
+                    <!-- <div class="col-lg-3">
                         <div>
                             <p class="fs-1">Recent News</p>
                             @include('layouts.line')
@@ -43,6 +43,9 @@
                             
 
                         </div>
+                    </div> -->
+                    <div class="col-lg-3">
+                        @include('layouts.recent-news')
                     </div>
 
                     <!-- Main News Section -->

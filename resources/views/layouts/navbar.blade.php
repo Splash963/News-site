@@ -66,10 +66,10 @@
             <div class="collapse navbar-collapse container" id="navbarSupportedContent">
                 <ul class="navbar-nav w-100 d-flex justify-content-between text-center">
                     <li class="nav-item flex-fill">
-                        <a class="nav-link active" href="#">Home</a>
+                        <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item flex-fill">
-                        <a class="nav-link" href="#">News</a>
+                        <a class="nav-link {{ Request::is('news') ? 'active' : '' }}" href="{{ route('news') }}">News</a>
                     </li>
                     <li class="nav-item flex-fill">
                         <a class="nav-link" href="#">Politics</a>
