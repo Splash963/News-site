@@ -9,3 +9,8 @@ Route::get('/', function () {
 Route::get('/news', function () {
     return view('news');
 })->name('news');
+
+Route::get('/politics', function () {
+    return view('politics');
+})->name('politics');
+
