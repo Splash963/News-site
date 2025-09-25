@@ -57,7 +57,6 @@
         </div>
         @include('layouts.line')
     </nav>
-
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid navbar-bg">
             <button class="navbar-toggler mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,6 +90,9 @@
                     </li>
                     <li class="nav-item flex-fill">
                         <a class="nav-link" href="#">Health</a>
+                    </li>
+                    <li class="nav-item flex-fill">
+                        <a class="nav-link {{ Request::is('admin-dashboard') ? 'active' : '' }}" href="{{ route('admin-dashboard') }}">Admin</a>
                     </li>
                 </ul>
             </div>

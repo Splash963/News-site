@@ -14,3 +14,6 @@ Route::get('/politics', function () {
     return view('politics');
 })->name('politics');
 
+Route::get('/admin-dashboard', function () {
+    return view('admin.admin-dashboard');
+})->name('admin-dashboard');
