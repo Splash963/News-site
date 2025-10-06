@@ -61,25 +61,25 @@
                                     <a class="nav-link {{ Request::is('add-news') ? 'active' : '' }}" href="{{ route('add-news') }}">Add News</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link {{ Request::is('news.politics') ? 'active' : '' }}" href="{{ route('news.politics') }}">Politic News</a>
+                                    <a class="nav-link {{ Request::is('show-news/politics') ? 'active' : '' }}" href="{{ route('news.politics') }}">Politic News</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Crime News</a>
+                                    <a class="nav-link {{ Request::is('show-news/crime') ? 'active' : '' }}" href="{{ route('news.crime') }}">Crime News</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Sports News</a>
+                                    <a class="nav-link {{ Request::is('show-news/sports') ? 'active' : '' }}" href="{{ route('news.sports') }}">Sports News</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">World News</a>
+                                    <a class="nav-link {{ Request::is('show-news/world') ? 'active' : '' }}" href="{{ route('news.world') }}">World News</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Business News</a>
+                                    <a class="nav-link {{ Request::is('show-news/business') ? 'active' : '' }}" href="{{ route('news.business') }}">Business News</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Education News</a>
+                                    <a class="nav-link {{ Request::is('show-news/education') ? 'active' : '' }}" href="{{ route('news.education') }}">Education News</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Health News</a>
+                                    <a class="nav-link {{ Request::is('show-news/health') ? 'active' : '' }}" href="{{ route('news.health') }}">Health News</a>
                                 </li>
                             </ul>
                         </div>

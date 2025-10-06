@@ -32,6 +32,10 @@ Route::get('/admin-dashboard', function () {
 // News Routes
 Route::get('/show-news/politics', [NewsController::class, 'politics'])->name('news.politics');
 Route::get('/show-news/crime', [NewsController::class, 'crime'])->name('news.crime');
-
+Route::get('/show-news/sports', [NewsController::class, 'sports'])->name('news.sports');
+Route::get('/show-news/world', [NewsController::class, 'world'])->name('news.world');
+Route::get('/show-news/business', [NewsController::class, 'business'])->name('news.business');
+Route::get('/show-news/education', [NewsController::class, 'education'])->name('news.education');
+Route::get('/show-news/health', [NewsController::class, 'health'])->name('news.health');
 
 // Route::resource('show-news', NewsController::class);
