@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,3 +18,20 @@ Route::get('/politics', function () {
 Route::get('/admin-dashboard', function () {
     return view('admin.admin-dashboard');
 })->name('admin-dashboard');
+
+Route::get('/add-news', function () {
+    return view('admin.add-news');
+})->name('add-news');
+
+Route::get('/admin-dashboard', function () {
+    return view('admin.admin-dashboard');
+})->name('admin-dashboard');
+
+
+
+// News Routes
+Route::get('/show-news/politics', [NewsController::class, 'politics'])->name('news.politics');
+Route::get('/show-news/crime', [NewsController::class, 'crime'])->name('news.crime');
+
+
+// Route::resource('show-news', NewsController::class);

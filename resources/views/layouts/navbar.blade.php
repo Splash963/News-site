@@ -91,9 +91,9 @@
                     <li class="nav-item flex-fill">
                         <a class="nav-link" href="#">Health</a>
                     </li>
-                    <li class="nav-item flex-fill">
+                    <!-- <li class="nav-item flex-fill">
                         <a class="nav-link {{ Request::is('admin-dashboard') ? 'active' : '' }}" href="{{ route('admin-dashboard') }}">Admin</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>

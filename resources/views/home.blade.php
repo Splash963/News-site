@@ -60,97 +60,72 @@
             <!-- Political News Section -->
             <div class="container mt-5">
                 <div class="col-md-3">
-                    <p class="fs-3">Recent Politics News</p>
+                    <p class="fs-3">Recent World News</p>
                     @include('layouts.line')
                 </div>
-                <div class="container overflow-x-scroll text-center">
-                    <div class="row container">
-                        <div class="col-lg-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://www.news.lk/images/2025/08/05/91_large.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://www.news.lk/images/2025/08/05/91_large.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                </div>
-                            </div>
+                <!-- Horizontal scroll container -->
+                <div class="d-flex flex-nowrap overflow-auto py-3" style="gap: 1rem;">
+                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
+                        <img src="https://www.news.lk/images/2025/08/05/91_large.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
                         </div>
-
-                        <div class="col-lg-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://www.news.lk/images/2025/08/05/91_large.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://www.news.lk/images/2025/08/05/91_large.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-
             </div>
 
             <!-- Sports News Section -->
             <div class="container mt-5">
                 <div class="col-md-3">
-                    <p class="fs-3">Recent Sports News</p>
+                    <p class="fs-3">Recent World News</p>
                     @include('layouts.line')
                 </div>
-                <div class="container overflow-x-scroll text-center">
-                    <div class="row container">
-                        <div class="col-lg-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                </div>
-                            </div>
+                <!-- Horizontal scroll container -->
+                <div class="d-flex flex-nowrap overflow-auto py-3" style="gap: 1rem;">
+                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
+                        <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
                         </div>
-
-                        <div class="col-lg-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
+
+                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
+                        <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
+                        <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
+                        <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
+                        <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
+                        <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -160,45 +135,51 @@
                     <p class="fs-3">Recent World News</p>
                     @include('layouts.line')
                 </div>
-                <div class="container overflow-x-scroll text-center">
-                    <div class="row container">
-                        <div class="col-lg-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                                </div>
-
-                            </div>
+                <!-- Horizontal scroll container -->
+                <div class="d-flex flex-nowrap overflow-auto py-3" style="gap: 1rem;">
+                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
+                        <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
                         </div>
                     </div>
+
+                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
+                        <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
+                        <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
+                        <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
+                        <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
+                        <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
