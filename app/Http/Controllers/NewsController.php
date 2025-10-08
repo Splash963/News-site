@@ -16,11 +16,6 @@ class NewsController extends Controller
         echo "This is the index method in NewsController.";
     }
 
-    public function politics()
-    {
-        return view('admin.news.politics');
-    }
-
     public function crime()
     {
         return view('admin.news.crime');
@@ -59,28 +54,35 @@ class NewsController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
-
-        $validatedData = $request->validate([
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
             'news_type' => 'required|string',
             'category' => 'required|string',
-            'title' => 'required|string',
-            'description' => 'required|string',
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
+        $imagePath = null;
+
         if ($request->hasFile('image')) {
-            $validatedData['image_path'] = $request->file('image')->store('public/news_images');
-        } else {
-            $validatedData['image_path'] = null;
+            $image = $request->file('image');
+            $imageName = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('news_images'), $imageName);
+            $imagePath = 'news_images/' . $imageName;
         }
 
-        News::create($validatedData);
-        return view('admin.add-news')->with('success', 'News item added successfully.');
+        News::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'news_type' => $request->news_type,
+            'category' => $request->category,
+            'image_path' => $imagePath,
+        ]);
+
+        return redirect()->route('add-news')->with('success', 'News added successfully!');
     }
 
     /**

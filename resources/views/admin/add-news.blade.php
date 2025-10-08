@@ -24,7 +24,7 @@
         <p style="text-align: center; color: #6c757d;">Use the form below to add a news article to the website.</p>
 
         <div style="max-width: 600px; margin: 30px auto; background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-            <form  method="POST" action="{{ route('news-crud.store') }} " enctype="multipart/form-data">
+            <form method="POST" action="{{ route('news-crud.store') }}" enctype="multipart/form-data">
                 <!-- News Type -->
                  @csrf
                 <div style="margin-bottom: 20px;">

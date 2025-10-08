@@ -18,6 +18,9 @@
         <div>
             @include('layouts.line')
         </div>
+        <div class="text-center py-4 px-3 rounded shadow-sm">
+            <h2 class="mb-0 fw-bold display-5" style="letter-spacing: 1px;">World News</h2>
+        </div>
         <div>
             <table class="table">
                 <thead>

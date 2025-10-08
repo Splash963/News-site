@@ -18,41 +18,10 @@
         <div>
             @include('layouts.line')
         </div>
+        <div class="text-center py-4 px-3 rounded shadow-sm">
+                <h2 class="mb-0 fw-bold display-5" style="letter-spacing: 1px;">Announcements</h2>
+            </div>
         <div>
-            <!-- <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">News Type</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Created At</th>
-                        <th scope="col">Updated At</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($announcements as $newsItem)
-                    <tr>
-                        <th scope="row">{{ $newsItem->id }}</th>
-                        <td>{{ $newsItem->news_type }}</td>
-                        <td>{{ $newsItem->category }}</td>
-                        <td>{{ $newsItem->title }}</td>
-                        <td>{{ $newsItem->description }}</td>
-                        <td>
-                            @if ($newsItem->image)
-                            <img src="{{ asset('storage/images/' . $newsItem->image) }}" alt="News Image" style="width: 100px; height: auto;">
-                            @else
-                            No Image
-                            @endif
-                        </td>
-                        <td>{{ $newsItem->created_at }}</td>
-                        <td>{{ $newsItem->updated_at }}</td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table> -->
             <table class="table table-bordered">
                 <thead>
                     <tr>

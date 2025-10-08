@@ -64,7 +64,7 @@
                                     <a class="nav-link {{ Request::is('announcement') ? 'active' : '' }}" href="{{ route('announcement.index') }}">Announcement</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link {{ Request::is('show-news/politics') ? 'active' : '' }}" href="{{ route('news.politics') }}">Politic News</a>
+                                    <a class="nav-link {{ Request::is('/show-news/politics') ? 'active' : '' }}" href="{{ route('news.politics') }}">Politic News</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link {{ Request::is('show-news/crime') ? 'active' : '' }}" href="{{ route('news.crime') }}">Crime News</a>

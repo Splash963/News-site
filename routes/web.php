@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\PoliticsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,10 +12,6 @@ Route::get('/', function () {
 Route::get('/news', function () {
     return view('news');
 })->name('news');
-
-Route::get('/politics', function () {
-    return view('politics');
-})->name('politics');
 
 Route::get('/admin-dashboard', function () {
     return view('admin.admin-dashboard');
@@ -30,11 +27,10 @@ Route::get('/admin-dashboard', function () {
 
 
 
-// News Routes
-//Route::get('/news/announcement', [AnnouncementController::class, 'index'])->name('news.announcement');
+// Show News
 Route::get('/', [AnnouncementController::class, 'homepage'])->name('home');
-//Route::get('/update', [AnnouncementController::class, 'update'])->name('update');
-Route::get('/show-news/politics', [NewsController::class, 'politics'])->name('news.politics');
+
+Route::get('/show-news/politics', [PoliticsController::class, 'view_data'])->name('news.politics');
 Route::get('/show-news/crime', [NewsController::class, 'crime'])->name('news.crime');
 Route::get('/show-news/sports', [NewsController::class, 'sports'])->name('news.sports');
 Route::get('/show-news/world', [NewsController::class, 'world'])->name('news.world');
@@ -42,6 +38,6 @@ Route::get('/show-news/business', [NewsController::class, 'business'])->name('ne
 Route::get('/show-news/education', [NewsController::class, 'education'])->name('news.education');
 Route::get('/show-news/health', [NewsController::class, 'health'])->name('news.health');
 
-// Route::resource('show-news', NewsController::class);
 Route::resource('news-crud', NewsController::class);
 Route::resource('announcement', AnnouncementController::class);
+Route::resource('politics', PoliticsController::class);

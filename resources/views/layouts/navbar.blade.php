@@ -1,5 +1,4 @@
 <head>
-    @vite('resources/css/home.css')
     <style>
         .nav-link {
             color: black;
@@ -71,7 +70,7 @@
                         <a class="nav-link {{ Request::is('news') ? 'active' : '' }}" href="{{ route('news') }}">News</a>
                     </li>
                     <li class="nav-item flex-fill">
-                        <a class="nav-link {{ Request::is('politics') ? 'active' : '' }}" href="{{ route('politics') }}">Politics</a>
+                        <a class="nav-link {{ Request::is('politics') ? 'active' : '' }}" href="{{ route('politics.index') }}">Politics</a>
                     </li>
                     <li class="nav-item flex-fill">
                         <a class="nav-link" href="#">Crime</a>
