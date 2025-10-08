@@ -1,4 +1,4 @@
-<div class="container">
+<div style="width: 90%; align-items: center; margin: auto;">
     <div class="row">
         <div class="col-12">
             <div id="carouselExampleCaptions" class="carousel slide">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -44,7 +45,7 @@ class NewsController extends Controller
     {
         return view('admin.news.education');
     }
-    
+
     public function health()
     {
         return view('admin.news.health');
@@ -63,7 +64,23 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validatedData = $request->validate([
+            'news_type' => 'required|string',
+            'category' => 'required|string',
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'image' => 'nullable|image|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $validatedData['image_path'] = $request->file('image')->store('public/news_images');
+        } else {
+            $validatedData['image_path'] = null;
+        }
+
+        News::create($validatedData);
+        return view('admin.add-news')->with('success', 'News item added successfully.');
     }
 
     /**

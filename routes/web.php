@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\AnnouncementController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,6 +31,9 @@ Route::get('/admin-dashboard', function () {
 
 
 // News Routes
+//Route::get('/news/announcement', [AnnouncementController::class, 'index'])->name('news.announcement');
+Route::get('/', [AnnouncementController::class, 'homepage'])->name('home');
+//Route::get('/update', [AnnouncementController::class, 'update'])->name('update');
 Route::get('/show-news/politics', [NewsController::class, 'politics'])->name('news.politics');
 Route::get('/show-news/crime', [NewsController::class, 'crime'])->name('news.crime');
 Route::get('/show-news/sports', [NewsController::class, 'sports'])->name('news.sports');
@@ -39,3 +43,5 @@ Route::get('/show-news/education', [NewsController::class, 'education'])->name('
 Route::get('/show-news/health', [NewsController::class, 'health'])->name('news.health');
 
 // Route::resource('show-news', NewsController::class);
+Route::resource('news-crud', NewsController::class);
+Route::resource('announcement', AnnouncementController::class);

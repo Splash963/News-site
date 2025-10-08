@@ -61,6 +61,9 @@
                                     <a class="nav-link {{ Request::is('add-news') ? 'active' : '' }}" href="{{ route('add-news') }}">Add News</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link {{ Request::is('announcement') ? 'active' : '' }}" href="{{ route('announcement.index') }}">Announcement</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link {{ Request::is('show-news/politics') ? 'active' : '' }}" href="{{ route('news.politics') }}">Politic News</a>
                                 </li>
                                 <li class="nav-item">

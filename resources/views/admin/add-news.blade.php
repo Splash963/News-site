@@ -24,28 +24,33 @@
         <p style="text-align: center; color: #6c757d;">Use the form below to add a news article to the website.</p>
 
         <div style="max-width: 600px; margin: 30px auto; background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-            <form action="">
+            <form  method="POST" action="{{ route('news-crud.store') }} " enctype="multipart/form-data">
                 <!-- News Type -->
+                 @csrf
                 <div style="margin-bottom: 20px;">
                     <label for="news-type" style="display: block; margin-bottom: 10px; font-weight: 600;">Select News Type:</label>
                     <div style="display: flex; gap: 20px;">
                         <div style="display: flex; align-items: center;">
-                            <input type="radio" name="news-type" id="normal" style="margin-right: 8px;">
+                            <input type="radio" name="news_type" id="normal" value="normal" style="margin-right: 8px;">
                             <label for="normal" style="margin: 0;">Normal</label>
                         </div>
                         <div style="display: flex; align-items: center;">
-                            <input type="radio" name="news-type" id="main" style="margin-right: 8px;">
+                            <input type="radio" name="news_type" id="main" value="main" style="margin-right: 8px;">
                             <label for="main" style="margin: 0;">Main</label>
                         </div>
+                        <!-- <div style="display: flex; align-items: center;">
+                            <input type="radio" name="news_type" id="announcements" value="announcements" style="margin-right: 8px;">
+                            <label for="announcements" style="margin: 0;">Announcement</label>
+                        </div> -->
                     </div>
                 </div>
 
                 <!-- Category -->
                 <div style="margin-bottom: 20px;">
                     <label for="category" style="display: block; margin-bottom: 10px; font-weight: 600;">Select Category:</label>
-                    <select id="category" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 5px;">
-                        <option selected>Select Category</option>
-                        <option value="select" disabled>Select</option>
+                    <select name="category" required style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 5px;">
+                        <option selected disabled>Select Category</option>
+                        <option value="announcement">Announcement</option>
                         <option value="politics">Politics</option>
                         <option value="crime">Crime</option>
                         <option value="sports">Sports</option>
@@ -59,19 +64,19 @@
                 <!-- Title -->
                 <div style="margin-bottom: 20px;">
                     <label for="title" style="display: block; margin-bottom: 10px; font-weight: 600;">Enter Title:</label>
-                    <input type="text" id="title" placeholder="Enter title" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 5px;">
+                    <input type="text" id="title" name="title" placeholder="Enter title" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 5px;">
                 </div>
 
                 <!-- Description -->
                 <div style="margin-bottom: 20px;">
                     <label for="description" style="display: block; margin-bottom: 10px; font-weight: 600;">Enter Description:</label>
-                    <textarea id="description" placeholder="Enter a Description here" style="width: 100%; height: 100px; padding: 10px; border: 1px solid #ced4da; border-radius: 5px;"></textarea>
+                    <textarea id="description" name="description" placeholder="Enter a Description here" style="width: 100%; height: 100px; padding: 10px; border: 1px solid #ced4da; border-radius: 5px;"></textarea>
                 </div>
 
                 <!-- Image Upload -->
                 <div style="margin-bottom: 20px;">
                     <label for="image" style="display: block; margin-bottom: 10px; font-weight: 600;">Upload Image:</label>
-                    <input type="file" id="image" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 5px;">
+                    <input type="file" id="image" name="image" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 5px;">
                 </div>
 
                 <!-- Submit Button -->

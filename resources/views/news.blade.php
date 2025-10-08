@@ -15,13 +15,14 @@
     </head>
 
     <body>
-        <div class="container">
-            <div class="container text-center">
+        <div style="width: 90%; align-items: center; margin: auto;">
+            <div class="text-center">
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-md-8">
                         <div class="card">
                             <img src="https://www.news.lk/images/2025/09/22/WhatsApp%20Image%202025-09-22%20at%2012.31.31_large.jpeg" class="card-img-top" alt="...">
                             <div class="card-body">
+                                <h5 class="card-title fs-2">President Anura Kumara Disanayaka to undertake an Official Visit to Japan from 27-30 September 2025</h5>
                                 <p class="card-text fs-4 align-items-center">At the invitation of the Government of Japan, President Anura Kumara Disanayaka will undertake an Official Visit to Japan from 27-30 September 2025.
 
                                     During the visit, the President will have an audience with His Majesty the Emperor of Japan and he will hold a summit meeting with the Japanese Prime Minister on a wide range of issues of mutual interest.
@@ -38,7 +39,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-4">
                         @include('layouts.recent-news')
                     </div>
                 </div>

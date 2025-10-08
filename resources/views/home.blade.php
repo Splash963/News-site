@@ -16,8 +16,8 @@
     </head>
 
     <body>
-        <div class="container">
-            <div class="container mt-5">
+        <div style="width: 90%; align-items: center; margin: auto;">
+            <div class=" mt-5">
                 <div class="row">
 
                     <!-- Recent News Section -->
@@ -42,23 +42,25 @@
                             <p class="fs-3">Special Announcements</p>
                             @include('layouts.line')
                         </div>
-                        <div class="card mb-3" style="max-width: 540px;">
+                        @foreach($announcements as $newsItem)
+                        <div class="card mb-3" style="max-width: 640px;">
                             <div class="row g-0">
                                 <div class="col-md-12">
                                     <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                        <h5 class="card-title">{{ $newsItem->title }}</h5>
+                                        <p class="card-text">{{ $newsItem->description }}</p>
+                                        <p class="card-text"><small class="text-body-secondary">Added : {{$newsItem->created_at}}</small></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
 
             <!-- Political News Section -->
-            <div class="container mt-5">
+            <div class="mt-5">
                 <div class="col-md-3">
                     <p class="fs-3">Recent World News</p>
                     @include('layouts.line')
@@ -76,7 +78,7 @@
             </div>
 
             <!-- Sports News Section -->
-            <div class="container mt-5">
+            <div class="mt-5">
                 <div class="col-md-3">
                     <p class="fs-3">Recent World News</p>
                     @include('layouts.line')
@@ -130,7 +132,7 @@
             </div>
 
             <!-- World News Section -->
-            <div class="container mt-5">
+            <div class="mt-5">
                 <div class="col-md-3">
                     <p class="fs-3">Recent World News</p>
                     @include('layouts.line')
