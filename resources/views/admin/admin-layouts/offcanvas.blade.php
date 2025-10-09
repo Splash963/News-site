@@ -55,7 +55,7 @@
                         <div class="offcanvas-body">
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li class="nav-item">
-                                    <a class="nav-link {{ Request::is('admin-dashboard') ? 'active' : '' }}" aria-current="page" href="{{ route('admin-dashboard') }}">Home</a>
+                                    <a class="nav-link {{ Request::is('admin-dashboard') ? 'active' : '' }}" aria-current="page" href="{{ route('admin-dashboard') }}">Dashboard</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link {{ Request::is('add-news') ? 'active' : '' }}" href="{{ route('add-news') }}">Add News</a>
@@ -64,7 +64,7 @@
                                     <a class="nav-link {{ Request::is('announcement') ? 'active' : '' }}" href="{{ route('announcement.index') }}">Announcement</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link {{ Request::is('/show-news/politics') ? 'active' : '' }}" href="{{ route('news.politics') }}">Politic News</a>
+                                    <a class="nav-link {{ Request::is('show-news/politics') ? 'active' : '' }}" href="{{ route('news.politics') }}">Politic News</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link {{ Request::is('show-news/crime') ? 'active' : '' }}" href="{{ route('news.crime') }}">Crime News</a>
@@ -83,6 +83,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link {{ Request::is('show-news/health') ? 'active' : '' }}" href="{{ route('news.health') }}">Health News</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link position-absolute bottom-0 start-50 translate-middle-x" href="{{ route('home') }}">Home</a>
                                 </li>
                             </ul>
                         </div>
