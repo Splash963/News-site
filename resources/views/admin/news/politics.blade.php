@@ -49,8 +49,8 @@
                         <td>{{ $newsItem->title }}</td>
                         <td>{{ Str::limit($newsItem->description, 100) }}</td>
                         <td>
-                            @if ($newsItem->image)
-                            <img src="{{ asset('storage/images/' . $newsItem->image) }}" alt="News Image" style="width: 100px; height: auto;">
+                            @if ($newsItem->image_path)
+                            <p>{{ $newsItem->image_path }}</p>
                             @else
                             <span class="text-muted">No Image</span>
                             @endif

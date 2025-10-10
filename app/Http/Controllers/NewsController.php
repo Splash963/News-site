@@ -57,63 +57,16 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'news_type' => 'required|string',
-            'category' => 'required|string',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-        ]);
-
-        $imagePath = null;
-
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = uniqid() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('news_images'), $imageName);
-            $imagePath = 'news_images/' . $imageName;
-        }
-
-        News::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'news_type' => $request->news_type,
-            'category' => $request->category,
-            'image_path' => $imagePath,
-        ]);
-
-        return redirect()->route('add-news')->with('success', 'News added successfully!');
+        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(News $news)
+    public function show()
     {
-        //
+       
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(News $news)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, News $news)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(News $news)
-    {
-        //
-    }
+    
 }

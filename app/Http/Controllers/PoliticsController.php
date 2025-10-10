@@ -2,36 +2,46 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\News;
+use App\Models\Home;
 
 use Illuminate\Http\Request;
 
+use function Laravel\Prompts\alert;
+
 class PoliticsController extends Controller
 {
+
     public function index()
     {
-        $politics = News::where('category', 'politics')
+        $politics = Home::where('category', 'politics')
             ->where('news_type', 'main')
             ->orderBy('created_at', 'desc')
-            ->first(); // or ->get() if expecting multiple
+            ->first();
 
-        return view('politics', compact('politics'));
+        $recent_news = $this->getRecentNews();
 
-        return view('admin.news.politics');
+        return view('politics', compact('politics', 'recent_news'));
+    }
+
+    public function getRecentNews()
+    {
+        return Home::where('category','politics')
+            ->orderBy('created_at', 'desc')
+            ->take(10)
+            ->get();
     }
 
     public function view_data()
     {
-        $politics = News::where('category', 'politics')->get();
+        $politics = Home::where('category', 'politics')->get();
         return view('admin.news.politics', compact('politics'));
     }
 
     public function destroy($id)
     {
-        $politics = News::findOrFail($id);
+        $politics = Home::findOrFail($id);
         $politics->delete();
 
         return redirect()->route('news.politics')->with('success', 'Politic News deleted successfully.');
     }
-
 }
