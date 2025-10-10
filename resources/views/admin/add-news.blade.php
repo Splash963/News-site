@@ -38,10 +38,6 @@
                             <input type="radio" name="news_type" id="main" value="main" style="margin-right: 8px;">
                             <label for="main" style="margin: 0;">Main</label>
                         </div>
-                        <!-- <div style="display: flex; align-items: center;">
-                            <input type="radio" name="news_type" id="announcements" value="announcements" style="margin-right: 8px;">
-                            <label for="announcements" style="margin: 0;">Announcement</label>
-                        </div> -->
                     </div>
                 </div>
 
