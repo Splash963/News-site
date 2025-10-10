@@ -17,8 +17,11 @@ class HomeController extends Controller
 
         $recent_news = $this->getRecentNews();
         $main_news = $this->getMainData();
+        $recent_politics = $this->getRecentPolitics();
+        $recent_sports = $this->getRecentSports();
+        $recent_world = $this->getRecentWorld();
 
-        return view('home', compact('announcements', 'recent_news', 'main_news'));
+        return view('home', compact('announcements', 'recent_news', 'main_news', 'recent_politics', 'recent_sports', 'recent_world'));
     }
 
     public function getRecentNews()
@@ -36,6 +39,30 @@ class HomeController extends Controller
             ->first();
     }
     
+    public function getRecentPolitics()
+    {
+        return Home::where('category','politics')
+            ->orderBy('created_at', 'desc')
+            ->take(10)
+            ->get();
+    }
+
+    public function getRecentSports()
+    {
+        return Home::where('category','sports')
+            ->orderBy('created_at', 'desc')
+            ->take(10)
+            ->get();
+    }
+
+    public function getRecentWorld()
+    {
+        return Home::where('category','world')
+            ->orderBy('created_at', 'desc')
+            ->take(10)
+            ->get();
+    }
+
     public function create()
     {
         //

@@ -67,12 +67,14 @@
 
                 <!-- Horizontal scroll container -->
                 <div class="d-flex flex-nowrap overflow-auto py-3" style="gap: 1rem;">
+                    @forEach($recent_politics as $newsItem)
                     <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="https://www.news.lk/images/2025/08/05/91_large.jpg" class="card-img-top" alt="...">
+                        <img src="{{ asset($newsItem->image_path) }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                            <p class="card-text">{{ $newsItem->title }}</p>
                         </div>
                     </div>
+                    @endforEach
                 </div>
             </div>
 
@@ -85,48 +87,14 @@
 
                 <!-- Horizontal scroll container -->
                 <div class="d-flex flex-nowrap overflow-auto py-3" style="gap: 1rem;">
+                    @forEach($recent_sports as $newsItem)
                     <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
+                        <img src="{{ asset($newsItem->image_path) }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                            <p class="card-text">{{ $newsItem->title }}</p>
                         </div>
                     </div>
-
-                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                        </div>
-                    </div>
-
-                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                        </div>
-                    </div>
-
-                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                        </div>
-                    </div>
-
-                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                        </div>
-                    </div>
-
-                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="https://www.news.lk/images/2025/08/08/SL-Cricket_large.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                        </div>
-                    </div>
-
+                    @endforEach
                 </div>
             </div>
 
@@ -139,48 +107,14 @@
 
                 <!-- Horizontal scroll container -->
                 <div class="d-flex flex-nowrap overflow-auto py-3" style="gap: 1rem;">
+                    @foreach($recent_world as $newsItem)
                     <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
+                        <img src="{{ asset($newsItem->image_path) }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                            <p class="card-text">{{ $newsItem->title }}</p>
                         </div>
                     </div>
-
-                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                        </div>
-                    </div>
-
-                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                        </div>
-                    </div>
-
-                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                        </div>
-                    </div>
-
-                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                        </div>
-                    </div>
-
-                    <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="https://www.news.lk/images/2025/09/09/94_large.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </div>
