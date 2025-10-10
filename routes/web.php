@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\CrimeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PoliticsController;
 use App\Http\Controllers\SportsController;
@@ -30,7 +31,7 @@ Route::get('/admin-dashboard', function () {
 Route::get('/', [HomeController::class, 'homepage'])->name('home');
 
 Route::get('/show-news/politics', [PoliticsController::class, 'view_data'])->name('news.politics');
-Route::get('/show-news/crime', [NewsController::class, 'crime'])->name('news.crime');
+Route::get('/show-news/crime', [CrimeController::class, 'view_data'])->name('news.crime');
 Route::get('/show-news/sports', [SportsController::class, 'view_data'])->name('news.sports');
 Route::get('/show-news/world', [NewsController::class, 'world'])->name('news.world');
 Route::get('/show-news/business', [NewsController::class, 'business'])->name('news.business');
@@ -40,5 +41,6 @@ Route::get('/show-news/health', [NewsController::class, 'health'])->name('news.h
 
 Route::resource('announcement', AnnouncementController::class);
 Route::resource('politics', PoliticsController::class);
+Route::resource('crime', CrimeController::class);
 Route::resource('sports', SportsController::class);
 Route::resource('news-crud', HomeController::class);

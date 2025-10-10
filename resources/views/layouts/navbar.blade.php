@@ -73,7 +73,7 @@
                         <a class="nav-link {{ Request::is('politics') ? 'active' : '' }}" href="{{ route('politics.index') }}">Politics</a>
                     </li>
                     <li class="nav-item flex-fill">
-                        <a class="nav-link" href="#">Crime</a>
+                        <a class="nav-link {{ Request::is('crime') ? 'active' : '' }}" href="{{ route('crime.index') }}">Crime</a>
                     </li>
                     <li class="nav-item flex-fill">
                         <a class="nav-link {{ Request::is('sports') ? 'active' : '' }}" href="{{ route('sports.index') }}">Sports</a>
