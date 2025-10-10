@@ -7,32 +7,35 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
-    {
-        //
-    }
-
-    public function homepage()
     {
         $announcements = Home::where('category', 'announcement')
             ->orderBy('created_at', 'desc')
             ->take(3)
             ->get();
 
-        $recent_news = Home::where('category', '!=', 'announcement')
+        $recent_news = $this->getRecentNews();
+        $main_news = $this->getMainData();
+
+        return view('home', compact('announcements', 'recent_news', 'main_news'));
+    }
+
+    public function getRecentNews()
+    {
+        return Home::where('category', '!=', 'announcement')
             ->orderBy('created_at', 'desc')
             ->take(10)
             ->get();
-
-        return view('home', compact('announcements', 'recent_news'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function getMainData()
+    {
+        return Home::where('news_type', 'main')
+            ->orderBy('created_at', 'desc')
+            ->first();
+    }
+    
     public function create()
     {
         //

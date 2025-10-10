@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\News;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\Home;
 
 class NewsController extends Controller
 {
@@ -13,7 +14,25 @@ class NewsController extends Controller
      */
     public function index()
     {
-        echo "This is the index method in NewsController.";
+        $recent_news = $this->getRecentNews();
+        $main_news = $this->getMainData();
+
+        return view('news', compact('recent_news', 'main_news'));
+    }
+
+    public function getRecentNews()
+    {
+        return Home::where('category', '!=', 'announcement')
+            ->orderBy('created_at', 'desc')
+            ->take(10)
+            ->get();
+    }
+
+    public function getMainData()
+    {
+        return Home::where('news_type', 'main')
+            ->orderBy('created_at', 'desc')
+            ->first();
     }
 
     public function crime()

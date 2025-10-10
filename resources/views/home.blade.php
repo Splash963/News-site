@@ -27,10 +27,10 @@
                     <!-- Main News Section -->
                     <div class="col-lg-6">
                         <div class="card mb-3">
-                            <img src="https://www.news.lk/images/2025/09/22/WhatsApp%20Image%202025-09-22%20at%2012.31.31_large.jpeg" class="card-img-top" alt="...">
+                            <img src="{{ asset($main_news->image_path) }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">President Anura to Undertake Official Visit to Japan from Sept. 27–30</h5>
-                                <p class="card-text"><small class="text-body-secondary">2025/09/23</small></p>
+                                <h5 class="card-title">{{ $main_news->title }}</h5>
+                                <p class="card-text"><small class="text-body-secondary">Added : {{$main_news->created_at}}</small></p>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
             <!-- Political News Section -->
             <div class="mt-5">
                 <div class="col-md-3">
-                    <p class="fs-3">Recent World News</p>
+                    <p class="fs-3">Recent Politics News</p>
                     @include('layouts.line')
                 </div>
 
@@ -79,7 +79,7 @@
             <!-- Sports News Section -->
             <div class="mt-5">
                 <div class="col-md-3">
-                    <p class="fs-3">Recent World News</p>
+                    <p class="fs-3">Recent Sports News</p>
                     @include('layouts.line')
                 </div>
 
