@@ -16,27 +16,29 @@
 
     <body>
         <div style="width: 90%; align-items: center; margin: auto;">
-            <div class=" mt-5">
+            <div class="mt-5">
                 <div class="row">
 
-                    <!-- Recent News Section -->
-                    <div class="col-lg-3">
-                        @include('layouts.recent-news')
-                    </div>
-
-                    <!-- Main News Section -->
-                    <div class="col-lg-6">
+                    <!-- Main News Section (1st on mobile, center on large screens) -->
+                    <div class="col-lg-6 order-1 order-lg-2">
                         <div class="card mb-3">
                             <img src="{{ asset($main_news->image_path) }}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $main_news->title }}</h5>
-                                <p class="card-text"><small class="text-body-secondary">Added : {{$main_news->created_at}}</small></p>
+                                <p class="card-text">
+                                    <small class="text-body-secondary">Added : {{$main_news->created_at}}</small>
+                                </p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Special Announcements Section -->
-                    <div class="col-lg-3">
+                    <!-- Recent News Section (2nd on mobile, left on large screens) -->
+                    <div class="col-lg-3 order-2 order-lg-1">
+                        @include('layouts.recent-news')
+                    </div>
+
+                    <!-- Special Announcements Section (3rd on mobile, right on large screens) -->
+                    <div class="col-lg-3 order-3">
                         <div>
                             <p class="fs-3">Special Announcements</p>
                             @include('layouts.line')
@@ -48,13 +50,16 @@
                                     <div class="card-body">
                                         <h5 class="card-title">{{ $newsItem->title }}</h5>
                                         <p class="card-text">{{ $newsItem->description }}</p>
-                                        <p class="card-text"><small class="text-body-secondary">Added : {{$newsItem->created_at}}</small></p>
+                                        <p class="card-text">
+                                            <small class="text-body-secondary">Added : {{$newsItem->created_at}}</small>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         @endforeach
                     </div>
+
                 </div>
             </div>
 

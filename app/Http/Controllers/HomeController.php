@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    
+
     public function index()
     {
         $announcements = Home::where('category', 'announcement')
@@ -35,13 +35,14 @@ class HomeController extends Controller
     public function getMainData()
     {
         return Home::where('news_type', 'main')
+            ->where('category', '!=', 'announcement')
             ->orderBy('created_at', 'desc')
             ->first();
     }
-    
+
     public function getRecentPolitics()
     {
-        return Home::where('category','politics')
+        return Home::where('category', 'politics')
             ->orderBy('created_at', 'desc')
             ->take(10)
             ->get();
@@ -49,7 +50,7 @@ class HomeController extends Controller
 
     public function getRecentSports()
     {
-        return Home::where('category','sports')
+        return Home::where('category', 'sports')
             ->orderBy('created_at', 'desc')
             ->take(10)
             ->get();
@@ -57,7 +58,7 @@ class HomeController extends Controller
 
     public function getRecentWorld()
     {
-        return Home::where('category','world')
+        return Home::where('category', 'world-news')
             ->orderBy('created_at', 'desc')
             ->take(10)
             ->get();

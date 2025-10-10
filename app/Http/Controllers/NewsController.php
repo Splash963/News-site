@@ -31,9 +31,11 @@ class NewsController extends Controller
     public function getMainData()
     {
         return Home::where('news_type', 'main')
+            ->where('category', '!=', 'announcement')
             ->orderBy('created_at', 'desc')
             ->first();
     }
+
 
     public function crime()
     {
@@ -74,18 +76,10 @@ class NewsController extends Controller
     }
 
 
-    public function store(Request $request)
-    {
-        
-    }
+    public function store(Request $request) {}
 
     /**
      * Display the specified resource.
      */
-    public function show()
-    {
-       
-    }
-
-    
+    public function show() {}
 }
