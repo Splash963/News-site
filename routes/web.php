@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\CrimeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PoliticsController;
@@ -30,7 +31,7 @@ Route::get('/show-news/politics', [PoliticsController::class, 'view_data'])->nam
 Route::get('/show-news/crime', [CrimeController::class, 'view_data'])->name('news.crime');
 Route::get('/show-news/sports', [SportsController::class, 'view_data'])->name('news.sports');
 Route::get('/show-news/world', [WorldController::class, 'view_data'])->name('news.world');
-Route::get('/show-news/business', [NewsController::class, 'business'])->name('news.business');
+Route::get('/show-news/business', [BusinessController::class, 'view_data'])->name('news.business');
 Route::get('/show-news/education', [NewsController::class, 'education'])->name('news.education');
 Route::get('/show-news/health', [NewsController::class, 'health'])->name('news.health');
 
@@ -40,4 +41,5 @@ Route::resource('politics', PoliticsController::class);
 Route::resource('crime', CrimeController::class);
 Route::resource('sports', SportsController::class);
 Route::resource('world', WorldController::class);
+Route::resource('business', BusinessController::class);
 Route::resource('news-crud', HomeController::class);

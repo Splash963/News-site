@@ -82,7 +82,7 @@
                         <a class="nav-link {{ Request::is('world') ? 'active' : '' }}" href="{{ route('world.index') }}">World News</a>
                     </li>
                     <li class="nav-item flex-fill">
-                        <a class="nav-link" href="#">Business</a>
+                        <a class="nav-link {{ Request::is('business') ? 'active' : '' }}" href="{{ route('business.index') }}">Business</a>
                     </li>
                     <li class="nav-item flex-fill">
                         <a class="nav-link" href="#">Education</a>
