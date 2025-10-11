@@ -85,10 +85,10 @@
                         <a class="nav-link {{ Request::is('business') ? 'active' : '' }}" href="{{ route('business.index') }}">Business</a>
                     </li>
                     <li class="nav-item flex-fill">
-                        <a class="nav-link" href="#">Education</a>
+                        <a class="nav-link {{ Request::is('education') ? 'active' : '' }}" href="{{ route('education.index') }}">Education</a>
                     </li>
                     <li class="nav-item flex-fill">
-                        <a class="nav-link" href="#">Health</a>
+                        <a class="nav-link {{ Request::is('health') ? 'active' : '' }}" href="{{ route('health.index') }}">Health</a>
                     </li>
                     <!-- <li class="nav-item flex-fill">
                         <a class="nav-link {{ Request::is('admin-dashboard') ? 'active' : '' }}" href="{{ route('admin-dashboard') }}">Admin</a>
