@@ -33,12 +33,12 @@
                     </div>
 
                     <!-- Recent News Section (2nd on mobile, left on large screens) -->
-                    <div class="col-lg-3 order-2 order-lg-1">
+                    <div class="col-lg-4 order-2 order-lg-1">
                         @include('layouts.recent-news')
                     </div>
 
                     <!-- Special Announcements Section (3rd on mobile, right on large screens) -->
-                    <div class="col-lg-3 order-3">
+                    <div class="col-lg-2 order-3">
                         <div>
                             <p class="fs-3">Special Announcements</p>
                             @include('layouts.line')

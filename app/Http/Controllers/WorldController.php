@@ -8,14 +8,14 @@ class WorldController extends Controller
 {
     public function index()
     {
-        $world = Home::where('category', 'world-news')
+        $main_news = Home::where('category', 'world-news')
             ->where('news_type', 'main')
             ->orderBy('created_at', 'desc')
             ->first();
 
         $recent_news = $this->getRecentNews();
 
-        return view('world', compact('world', 'recent_news'));
+        return view('world', compact('main_news', 'recent_news'));
     }
 
     public function getRecentNews()

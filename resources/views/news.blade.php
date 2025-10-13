@@ -19,13 +19,7 @@
             <div class="text-center">
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="card">
-                            <img src="{{ asset($main_news->image_path) }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title fs-2">{{ $main_news->title }}</h5>
-                                <p class="card-text fs-4 align-items-center">{{ $main_news->description }}</p>
-                            </div>
-                        </div>
+                        @include('layouts.main-news')
                     </div>
                     <div class="col-12 col-md-4">
                         @include('layouts.recent-news')

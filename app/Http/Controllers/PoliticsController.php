@@ -13,14 +13,14 @@ class PoliticsController extends Controller
 
     public function index()
     {
-        $politics = Home::where('category', 'politics')
+        $main_news = Home::where('category', 'politics')
             ->where('news_type', 'main')
             ->orderBy('created_at', 'desc')
             ->first();
 
         $recent_news = $this->getRecentNews();
 
-        return view('politics', compact('politics', 'recent_news'));
+        return view('politics', compact('main_news', 'recent_news'));
     }
 
     public function getRecentNews()

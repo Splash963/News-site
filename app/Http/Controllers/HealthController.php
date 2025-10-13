@@ -8,14 +8,14 @@ class HealthController extends Controller
 {
     public function index()
     {
-        $health = Home::where('category', 'health')
+        $main_news = Home::where('category', 'health')
             ->where('news_type', 'main')
             ->orderBy('created_at', 'desc')
             ->first();
 
         $recent_news = $this->getRecentNews();
 
-        return view('health', compact('health', 'recent_news'));
+        return view('health', compact('main_news', 'recent_news'));
     }
 
     public function getRecentNews()

@@ -8,14 +8,14 @@ class SportsController extends Controller
 {
     public function index()
     {
-        $sports = Home::where('category', 'sports')
+        $main_news = Home::where('category', 'sports')
             ->where('news_type', 'main')
             ->orderBy('created_at', 'desc')
             ->first();
 
         $recent_news = $this->getRecentNews();
 
-        return view('sports', compact('sports', 'recent_news'));
+        return view('sports', compact('main_news', 'recent_news'));
     }
 
     public function getRecentNews()

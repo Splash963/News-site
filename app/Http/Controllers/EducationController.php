@@ -8,14 +8,14 @@ class EducationController extends Controller
 {
     public function index()
     {
-        $education = Home::where('category', 'education')
+        $main_news = Home::where('category', 'education')
             ->where('news_type', 'main')
             ->orderBy('created_at', 'desc')
             ->first();
 
         $recent_news = $this->getRecentNews();
 
-        return view('education', compact('education', 'recent_news'));
+        return view('education', compact('main_news', 'recent_news'));
     }
 
     public function getRecentNews()

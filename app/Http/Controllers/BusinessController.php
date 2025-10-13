@@ -8,14 +8,14 @@ class BusinessController extends Controller
 {
     public function index()
     {
-        $business = Home::where('category', 'business')
+        $main_news = Home::where('category', 'business')
             ->where('news_type', 'main')
             ->orderBy('created_at', 'desc')
             ->first();
 
         $recent_news = $this->getRecentNews();
 
-        return view('business', compact('business', 'recent_news'));
+        return view('business', compact('main_news', 'recent_news'));
     }
 
     public function getRecentNews()

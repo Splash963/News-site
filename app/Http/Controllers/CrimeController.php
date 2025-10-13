@@ -8,14 +8,14 @@ class CrimeController extends Controller
 {
     public function index()
     {
-        $crime = Home::where('category', 'crime')
+        $main_news = Home::where('category', 'crime')
             ->where('news_type', 'main')
             ->orderBy('created_at', 'desc')
             ->first();
 
         $recent_news = $this->getRecentNews();
 
-        return view('crime', compact('crime', 'recent_news'));
+        return view('crime', compact('main_news', 'recent_news'));
     }
 
     public function getRecentNews()

@@ -19,15 +19,7 @@
             <div class="text-center">
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="card">
-                            <img src="{{ asset($health->image_path) }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title fs-2">{{ $health->title }}</h5>
-                                <p class="card-text fs-4 align-items-center">{{ $health->description }}</p>
-                                <p class="card-text"><small class="text-body-secondary">Added : {{$health->created_at}}</small></p>
-                            </div>
-                        </div>
-                        
+                        @include('layouts.main-news')
                     </div>
                     <div class="col-12 col-md-4">
                         @include('layouts.recent-news')
