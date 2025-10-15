@@ -14,15 +14,20 @@ class WorldController extends Controller
             ->first();
 
         $recent_news = $this->getRecentNews();
+        $all_news = $this->all_data();
 
-        return view('world', compact('main_news', 'recent_news'));
+        return view('world', compact('main_news', 'recent_news', 'all_news'));
+    }
+
+    public function all_data(){
+        return Home::where('category','world-news')->paginate(10);
     }
 
     public function getRecentNews()
     {
         return Home::where('category','world-news')
             ->orderBy('created_at', 'desc')
-            ->take(10)
+            ->take(5)
             ->get();
     }
 

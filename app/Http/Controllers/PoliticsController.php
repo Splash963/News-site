@@ -19,15 +19,20 @@ class PoliticsController extends Controller
             ->first();
 
         $recent_news = $this->getRecentNews();
+        $all_news = $this->all_data();
 
-        return view('politics', compact('main_news', 'recent_news'));
+        return view('politics', compact('main_news', 'recent_news', 'all_news'));
+    }
+
+    public function all_data(){
+        return Home::where('category','politics')->paginate(10);
     }
 
     public function getRecentNews()
     {
         return Home::where('category','politics')
             ->orderBy('created_at', 'desc')
-            ->take(10)
+            ->take(5)
             ->get();
     }
 

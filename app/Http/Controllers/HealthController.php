@@ -14,15 +14,20 @@ class HealthController extends Controller
             ->first();
 
         $recent_news = $this->getRecentNews();
+        $all_news = $this->all_data();
 
-        return view('health', compact('main_news', 'recent_news'));
+        return view('health', compact('main_news', 'recent_news', 'all_news'));
+    }
+
+    public function all_data(){
+        return Home::where('category','health')->paginate(10);
     }
 
     public function getRecentNews()
     {
         return Home::where('category','health')
             ->orderBy('created_at', 'desc')
-            ->take(10)
+            ->take(5)
             ->get();
     }
 

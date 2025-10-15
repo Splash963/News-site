@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Home;
 use Illuminate\Http\Request;
 
@@ -14,15 +15,21 @@ class EducationController extends Controller
             ->first();
 
         $recent_news = $this->getRecentNews();
+        $all_news = $this->all_data();
 
-        return view('education', compact('main_news', 'recent_news'));
+        return view('education', compact('main_news', 'recent_news', 'all_news'));
+    }
+
+    public function all_data()
+    {
+        return Home::where('category', 'education')->paginate(10);
     }
 
     public function getRecentNews()
     {
-        return Home::where('category','education')
+        return Home::where('category', 'education')
             ->orderBy('created_at', 'desc')
-            ->take(10)
+            ->take(5)
             ->get();
     }
 

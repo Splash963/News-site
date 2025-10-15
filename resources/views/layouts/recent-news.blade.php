@@ -40,7 +40,7 @@
 
 
 <div>
-    <p class="fs-1">Recent News</p>
+    <p class="fs-1" style="display: flex; align-self: flex-start;">Recent News</p>
     @include('layouts.line')
 </div>
 <div class="overflow-y-scroll" style="max-height: 700px;">

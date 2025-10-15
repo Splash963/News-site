@@ -14,15 +14,20 @@ class CrimeController extends Controller
             ->first();
 
         $recent_news = $this->getRecentNews();
+        $all_news = $this->all_data();
 
-        return view('crime', compact('main_news', 'recent_news'));
+        return view('crime', compact('main_news', 'recent_news', 'all_news'));
+    }
+
+    public function all_data(){
+        return Home::where('category','crime')->paginate(10);
     }
 
     public function getRecentNews()
     {
         return Home::where('category','crime')
             ->orderBy('created_at', 'desc')
-            ->take(10)
+            ->take(5)
             ->get();
     }
 

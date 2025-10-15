@@ -26,6 +26,7 @@
                     </div>
                 </div>
             </div>
+            @include('layouts.all-news')
         </div>
     </body>
 
