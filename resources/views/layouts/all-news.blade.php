@@ -11,15 +11,16 @@
                 @include('layouts.line')
             </div>
             @foreach($all_news as $news)
+            <a href="{{route('news.show', $news->id)}}" style="text-decoration: none; color: inherit;">
             <div class="card mb-3">
                 <div class="row g-0">
                     <div class="col-4">
-                        <img class="img-fluid" src="{{ $news->image_path }}" alt="{{ $news->title }}">
+                        <img class="img-fluid" src="{{ asset($news->image_path) }}" alt="{{ $news->title }}">
                     </div>
                     <div class="col-8">
                         <div class="card-body">
                             <div class="overflow-hidden">
-                                <p class="fw-medium" style="max-height: 115px;">{{ $news->title }}</p>
+                                <p class="fw-medium fs-3" style="max-height: 115px;">{{ $news->title }}</p>
                             </div>
                             <p class="card-text">
                                 <small class="text-body-secondary ">Added: {{ $news->created_at->format('M d, Y') }}</small>
@@ -28,6 +29,7 @@
                     </div>
                 </div>
             </div>
+            </a>
             @endforeach
         </div>
         <div style="display: flex; align-self: flex-start;">

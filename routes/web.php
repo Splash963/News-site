@@ -47,3 +47,6 @@ Route::resource('business', BusinessController::class);
 Route::resource('education', EducationController::class);
 Route::resource('health', HealthController::class);
 Route::resource('news-crud', HomeController::class);
+
+
+Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');

@@ -55,7 +55,7 @@
                         <td>{{ $newsItem->updated_at->format('Y-m-d H:i') }}</td>
                         <td><a href="{{ route('announcement.edit', $newsItem->id) }}" type="button">Edit</a></td>
                         <td>
-                            <form action="{{ route('politics.destroy', $newsItem->id) }}" style="display: inline;" method="POST">
+                            <form action="{{ route('crime.destroy', $newsItem->id) }}" style="display: inline;" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this announcement?');">Delete</button>
@@ -65,7 +65,7 @@
                     @endforeach
                     @else
                     <tr>
-                        <td colspan="8" class="text-center">No Sports News found.</td>
+                        <td colspan="8" class="text-center">No Crime News found.</td>
                     </tr>
                     @endif
                 </tbody>

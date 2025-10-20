@@ -72,13 +72,15 @@
 
                 <!-- Horizontal scroll container -->
                 <div class="d-flex flex-nowrap overflow-auto py-3" style="gap: 1rem;">
-                    @forEach($recent_politics as $newsItem)
+                    @forEach($recent_politics as $news)
+                    <a href="{{route('news.show', $news->id)}}" style="text-decoration: none; color: inherit;">
                     <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="{{ asset($newsItem->image_path) }}" class="card-img-top" alt="...">
+                        <img src="{{ asset($news->image_path) }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">{{ $newsItem->title }}</p>
+                            <p class="card-text">{{ $news->title }}</p>
                         </div>
                     </div>
+                    </a>
                     @endforEach
                 </div>
             </div>
@@ -92,13 +94,15 @@
 
                 <!-- Horizontal scroll container -->
                 <div class="d-flex flex-nowrap overflow-auto py-3" style="gap: 1rem;">
-                    @forEach($recent_sports as $newsItem)
+                    @forEach($recent_sports as $news)
+                    <a href="{{route('news.show', $news->id)}}" style="text-decoration: none; color: inherit;">
                     <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="{{ asset($newsItem->image_path) }}" class="card-img-top" alt="...">
+                        <img src="{{ asset($news->image_path) }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">{{ $newsItem->title }}</p>
+                            <p class="card-text">{{ $news->title }}</p>
                         </div>
                     </div>
+                    </a>
                     @endforEach
                 </div>
             </div>
@@ -112,13 +116,15 @@
 
                 <!-- Horizontal scroll container -->
                 <div class="d-flex flex-nowrap overflow-auto py-3" style="gap: 1rem;">
-                    @foreach($recent_world as $newsItem)
+                    @foreach($recent_world as $news)
+                    <a href="{{route('news.show', $news->id)}}" style="text-decoration: none; color: inherit;">
                     <div class="card" style="max-width: 20rem; min-width: 20rem;">
-                        <img src="{{ asset($newsItem->image_path) }}" class="card-img-top" alt="...">
+                        <img src="{{ asset($news->image_path) }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">{{ $newsItem->title }}</p>
+                            <p class="card-text">{{ $news->title }}</p>
                         </div>
                     </div>
+                    </a>
                     @endforeach
                 </div>
             </div>

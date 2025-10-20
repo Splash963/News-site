@@ -87,5 +87,11 @@ class NewsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show() {}
+    public function show($id)
+    {
+        $main_news = Home::findOrFail($id);
+        $recent_news = $this->getRecentNews();
+        $all_news = $this->all_data();
+        return view('news', compact('main_news', 'recent_news', 'all_news'));
+    }
 }
