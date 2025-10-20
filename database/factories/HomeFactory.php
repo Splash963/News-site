@@ -22,7 +22,7 @@ class HomeFactory extends Factory
             'title' => $this->faker->sentence(),
             'description' => $this->faker->sentence(),
             'news_type' => $this->faker->randomElement(['main', 'normal']),
-            'category' => $this->faker->randomElement(['sports']),
+            'category' => $this->faker->randomElement(['announcement']),
             'image_path' => $imageName,
         ];
     }

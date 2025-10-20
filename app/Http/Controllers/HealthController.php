@@ -33,7 +33,7 @@ class HealthController extends Controller
 
     public function view_data()
     {
-        $view_data = Home::where('category', 'health')->get();
+        $view_data = Home::where('category', 'health')->paginate(10);
         return view('admin.news.health', compact('view_data'));
     }
 

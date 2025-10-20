@@ -33,7 +33,7 @@ class SportsController extends Controller
 
     public function view_data()
     {
-        $sports = Home::where('category', 'sports')->get();
+        $sports = Home::where('category', 'sports')->paginate(10);
         return view('admin.news.sports', compact('sports'));
     }
 

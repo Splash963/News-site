@@ -9,14 +9,13 @@ class AnnouncementController extends Controller
 {
     public function index()
     {
-        $announcements = Home::where('category', 'announcement')->get();
+        $announcements = Home::where('category', 'announcement')->paginate(10);
         return view('admin.news.announcement', compact('announcements'));
     }
 
     public function edit($id)
     {
-        $announcement = Home::findOrFail($id);
-        return view('admin.add-news', compact('announcement'));
+       
     }
 
     public function update(Request $request, Home $news)

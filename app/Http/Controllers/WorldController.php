@@ -33,7 +33,7 @@ class WorldController extends Controller
 
     public function view_data()
     {
-        $world = Home::where('category', 'world-news')->get();
+        $world = Home::where('category', 'world-news')->paginate(10);
         return view('admin.news.world', compact('world'));
     }
 

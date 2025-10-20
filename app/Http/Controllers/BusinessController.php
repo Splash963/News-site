@@ -33,7 +33,7 @@ class BusinessController extends Controller
 
     public function view_data()
     {
-        $view_data = Home::where('category', 'business')->get();
+        $view_data = Home::where('category', 'business')->paginate(10);
         return view('admin.news.business', compact('view_data'));
     }
 

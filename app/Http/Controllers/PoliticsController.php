@@ -38,7 +38,7 @@ class PoliticsController extends Controller
 
     public function view_data()
     {
-        $politics = Home::where('category', 'politics')->get();
+        $politics = Home::where('category', 'politics')->paginate(10);
         return view('admin.news.politics', compact('politics'));
     }
 

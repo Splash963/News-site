@@ -33,7 +33,7 @@ class CrimeController extends Controller
 
     public function view_data()
     {
-        $crime = Home::where('category', 'crime')->get();
+        $crime = Home::where('category', 'crime')->paginate(10);
         return view('admin.news.crime', compact('crime'));
     }
 

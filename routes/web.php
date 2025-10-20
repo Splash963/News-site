@@ -23,7 +23,6 @@ Route::get('/add-news', function () {
 
 
 
-
 // Show News
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/news', [NewsController::class, 'index'])->name('news');
@@ -37,7 +36,7 @@ Route::get('/show-news/business', [BusinessController::class, 'view_data'])->nam
 Route::get('/show-news/education', [EducationController::class, 'view_data'])->name('news.education');
 Route::get('/show-news/health', [HealthController::class, 'view_data'])->name('news.health');
 
-
+Route::resource('home', HomeController::class);
 Route::resource('announcement', AnnouncementController::class);
 Route::resource('politics', PoliticsController::class);
 Route::resource('crime', CrimeController::class);
@@ -46,7 +45,6 @@ Route::resource('world', WorldController::class);
 Route::resource('business', BusinessController::class);
 Route::resource('education', EducationController::class);
 Route::resource('health', HealthController::class);
-Route::resource('news-crud', HomeController::class);
 
 
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');

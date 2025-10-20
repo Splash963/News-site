@@ -35,7 +35,7 @@ class EducationController extends Controller
 
     public function view_data()
     {
-        $view_data = Home::where('category', 'education')->get();
+        $view_data = Home::where('category', 'education')->paginate(10);
         return view('admin.news.education', compact('view_data'));
     }
 

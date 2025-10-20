@@ -42,37 +42,6 @@ class NewsController extends Controller
             ->first();
     }
 
-
-    public function crime()
-    {
-        return view('admin.news.crime');
-    }
-
-    public function sports()
-    {
-        return view('admin.news.sports');
-    }
-
-    public function world()
-    {
-        return view('admin.news.world');
-    }
-
-    public function business()
-    {
-        return view('admin.news.business');
-    }
-
-    public function education()
-    {
-        return view('admin.news.education');
-    }
-
-    public function health()
-    {
-        return view('admin.news.health');
-    }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -80,7 +49,6 @@ class NewsController extends Controller
     {
         //
     }
-
 
     public function store(Request $request) {}
 
