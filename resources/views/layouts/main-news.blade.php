@@ -17,8 +17,8 @@
 </head>
 
 
-<div class="card">
-    <img src="{{ asset($main_news->image_path) }}" class="card-img-top" alt="...">
+<div class="card"  style="border-radius: 0;">
+    <img src="{{ asset($main_news->image_path) }}" class="card-img-top"  style="border-radius: 0;" alt="...">
     <div class="card-body">
         <h5 class="card-title fw-semibold fs-2">{{ $main_news->title }}</h5>
         <div class="mt-5" style="text-align: left;">

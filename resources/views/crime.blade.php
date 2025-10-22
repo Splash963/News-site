@@ -16,7 +16,7 @@
 
     <body>
         <div style="width: 90%; align-items: center; margin: auto;">
-            <div class="text-center">
+            <div class="text-center mt-5">
                 <div class="row">
                     <div class="col-md-8">
                         @include('layouts.main-news')
