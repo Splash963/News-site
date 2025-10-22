@@ -43,7 +43,7 @@
     <p class="fs-1" style="display: flex; align-self: flex-start;">Recent News</p>
     @include('layouts.line')
 </div>
-<div class="overflow-y-scroll" style="max-height: 700px;">
+<div class="overflow-y-scroll" style="max-height: 900px;">
     @foreach($recent_news as $news)
     <a href="{{route('news.show', $news->id)}}" style="text-decoration: none; color: inherit;">
         <div class="card mb-3" style="max-width: 540px;">
@@ -54,7 +54,7 @@
                 <div class="col">
                     <div class="card-body">
                         <div class="overflow-hidden">
-                            <p class="fw-medium" style="max-height: 115px;">{{ $news->title }}</p>
+                            <p class="fw-semibold" style="max-height: 115px;">{{ $news->title }}</p>
                         </div>
                         <p class="card-text">
                             <small class="text-body-secondary ">Added: {{ $news->created_at->format('M d, Y') }}</small>

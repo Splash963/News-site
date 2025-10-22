@@ -97,4 +97,5 @@
             </div>
         </div>
     </nav>
+    @include('layouts.marquee')
 </div>

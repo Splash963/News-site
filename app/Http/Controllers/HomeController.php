@@ -83,7 +83,7 @@ class HomeController extends Controller
             'description' => 'required|string',
             'news_type' => 'required|string',
             'category' => 'required|string',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
 
         $imagePath = null;

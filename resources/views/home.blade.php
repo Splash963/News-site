@@ -20,11 +20,11 @@
                 <div class="row">
 
                     <!-- Main News Section (1st on mobile, center on large screens) -->
-                    <div class="col-lg-6 order-1 order-lg-2">
+                    <div class="col-lg-5 order-1 order-lg-2">
                         <div class="card mb-3">
                             <img src="{{ asset($main_news->image_path) }}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $main_news->title }}</h5>
+                                <h5 class="card-title fw-semibold">{{ $main_news->title }}</h5>
                                 <p class="card-text">
                                     <small class="text-body-secondary">Added : {{$main_news->created_at}}</small>
                                 </p>
@@ -38,9 +38,9 @@
                     </div>
 
                     <!-- Special Announcements Section (3rd on mobile, right on large screens) -->
-                    <div class="col-lg-2 order-3">
+                    <div class="col-lg-3 order-3">
                         <div>
-                            <p class="fs-3">Special Announcements</p>
+                            <p class="fs-2">Special Announcements</p>
                             @include('layouts.line')
                         </div>
                         @foreach($announcements as $newsItem)
@@ -48,8 +48,8 @@
                             <div class="row g-0">
                                 <div class="col-md-12">
                                     <div class="card-body">
-                                        <h5 class="card-title">{{ $newsItem->title }}</h5>
-                                        <p class="card-text">{{ $newsItem->description }}</p>
+                                        <p class="fw-semibold fs-5">{{ $newsItem->title }}</p>
+                                        <p class="fs-6">{{ $newsItem->description }}</p>
                                         <p class="card-text">
                                             <small class="text-body-secondary">Added : {{$newsItem->created_at}}</small>
                                         </p>
@@ -66,7 +66,7 @@
             <!-- Political News Section -->
             <div class="mt-5">
                 <div class="col-md-3">
-                    <p class="fs-3">Recent Politics News</p>
+                    <p class="fs-1">Recent Politics News</p>
                     @include('layouts.line')
                 </div>
 
@@ -77,7 +77,7 @@
                     <div class="card" style="max-width: 20rem; min-width: 20rem;">
                         <img src="{{ asset($news->image_path) }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">{{ $news->title }}</p>
+                            <p class="card-text fw-semibold">{{ $news->title }}</p>
                         </div>
                     </div>
                     </a>
@@ -88,7 +88,7 @@
             <!-- Sports News Section -->
             <div class="mt-5">
                 <div class="col-md-3">
-                    <p class="fs-3">Recent Sports News</p>
+                    <p class="fs-1">Recent Sports News</p>
                     @include('layouts.line')
                 </div>
 
@@ -99,7 +99,7 @@
                     <div class="card" style="max-width: 20rem; min-width: 20rem;">
                         <img src="{{ asset($news->image_path) }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">{{ $news->title }}</p>
+                            <p class="card-text fw-semibold">{{ $news->title }}</p>
                         </div>
                     </div>
                     </a>
@@ -110,7 +110,7 @@
             <!-- World News Section -->
             <div class="mt-5">
                 <div class="col-md-3">
-                    <p class="fs-3">Recent World News</p>
+                    <p class="fs-1">Recent World News</p>
                     @include('layouts.line')
                 </div>
 
@@ -121,7 +121,7 @@
                     <div class="card" style="max-width: 20rem; min-width: 20rem;">
                         <img src="{{ asset($news->image_path) }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-text">{{ $news->title }}</p>
+                            <p class="card-text fw-semibold">{{ $news->title }}</p>
                         </div>
                     </div>
                     </a>
