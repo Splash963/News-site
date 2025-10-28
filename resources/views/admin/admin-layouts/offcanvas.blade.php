@@ -7,9 +7,36 @@
             font-size: 16px;
         }
 
+        .logout {
+            margin-top: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .logout-link {
+            color: black;
+            font-family: Arimo, sans-serif;
+            font-weight: 100;
+            font-size: 16px;
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .logout-link:hover {
+            background-color: #E50046;
+            color: white !important;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+
         .navbar-nav .nav-item .nav-link:hover {
             background-color: #E50046;
             color: white;
+            width: 100%;
         }
 
         .navbar-nav .nav-link.active {
@@ -84,8 +111,14 @@
                                 <li class="nav-item">
                                     <a class="nav-link {{ Request::is('show-news/health') ? 'active' : '' }}" href="{{ route('news.health') }}">Health News</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link position-absolute bottom-0 start-50 translate-middle-x" href="{{ route('home') }}">Home</a>
+
+                                <li class="logout mt-5">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    <a class="logout-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
                                 </li>
                             </ul>
                         </div>

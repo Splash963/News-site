@@ -11,15 +11,24 @@ use App\Http\Controllers\PoliticsController;
 use App\Http\Controllers\SportsController;
 use App\Http\Controllers\WorldController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 Route::get('/admin-dashboard', function () {
     return view('admin.admin-dashboard');
-})->name('admin-dashboard');
+})->name('admin-dashboard')->middleware('auth');
 
 Route::get('/add-news', function () {
     return view('admin.add-news');
 })->name('add-news');
+
+Route::post('/logout', function (Request $request) {
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    return redirect('/login');
+})->name('logout');
+
 
 
 
@@ -48,3 +57,6 @@ Route::resource('health', HealthController::class);
 
 
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
