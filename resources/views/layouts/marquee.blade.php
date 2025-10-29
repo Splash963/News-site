@@ -42,7 +42,7 @@
 </head>
 
 <body>
-    <div class="row">
+    <div class="row me-0">
         <div class="col-md-12">
             <div class="news-ticker">
                 <div class="ticker-content">
