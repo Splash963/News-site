@@ -163,11 +163,15 @@
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-12 p-0" style="display: flex; justify-content: center; align-items: center;">
+                                <button type="submit" style="width: 80%;">
                                     {{ __('Login') }}
                                 </button>
-
+                            </div>
+                            <div class="col-12 p-0" style="display: flex; justify-content: center; align-items: center;">
+                                <button id="showRegister" style="width: 80%;">Go to Registration</button>
+                            </div>
+                            <div class="col-12 p-0" style="display: flex; justify-content: center; align-items: center;">
                                 @if (Route::has('password.request'))
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
@@ -176,9 +180,9 @@
                             </div>
                         </div>
                     </form>
-                    <button id="showRegister">Go to Registration</button>
                 </div>
 
+                <!-- Registration Form -->
                 <div class="form-box register-box textfields row justify-content-center">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
