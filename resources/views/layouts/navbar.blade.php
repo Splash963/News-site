@@ -90,9 +90,6 @@
                     <li class="nav-item flex-fill">
                         <a class="nav-link {{ Request::is('health') ? 'active' : '' }}" href="{{ route('health.index') }}">Health</a>
                     </li>
-                    <!-- <li class="nav-item flex-fill">
-                        <a class="nav-link {{ Request::is('admin-dashboard') ? 'active' : '' }}" href="{{ route('admin-dashboard') }}">Admin</a>
-                    </li> -->
                 </ul>
             </div>
         </div>

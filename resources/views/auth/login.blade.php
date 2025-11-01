@@ -47,8 +47,8 @@
         }
 
         .flex-2 {
-            width: 80%;
-            background-color: #E50046;
+            width: 100%;
+            background-color: #134686;
             transition: all 0.9s ease;
             border-radius: 0 20px 20px 0;
             display: flex;
@@ -58,9 +58,9 @@
 
         .textfields {
             background-color: transparent;
-            color: white;
-            border: none;
-            border-radius: 0;
+            border-bottom: solid 2px white;
+            box-shadow: none;
+            outline: none
         }
 
         .form-box {
@@ -112,21 +112,25 @@
 
 <body>
     <div class="background">
-        <div class="flex-1"></div>
+        <div class="flex-1">
+            <img src="images/Gemini_Generated_Image_f2zj1lf2zj1lf2zj.png" class="img-fluid" alt="...">
+        </div>
         <div class="flex-2">
             <div class="form-wrapper">
+
+                <!-- Login Form -->
                 <div class="form-box login-box active row justify-content-center">
-                    <div class="title">
-                        <p class="">Login</p>
+                    <div class="title mb-5">
+                        <p class="fs-1 text-white" style="display: flex; justify-content: center; align-items: center;">Login</p>
                     </div>
-                    <form method="POST" class="textfields" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-4">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="textfields @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -140,7 +144,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" class=" textfields @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -184,6 +188,9 @@
 
                 <!-- Registration Form -->
                 <div class="form-box register-box textfields row justify-content-center">
+                    <div class="title mb-5">
+                        <p class="fs-1 text-white" style="display: flex; justify-content: center; align-items: center;">Registration</p>
+                    </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -238,14 +245,16 @@
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-12" style="display: flex; justify-content: center; align-items: center;">
+                                <button type="submit" style="width: 80%;">
                                     {{ __('Register') }}
                                 </button>
                             </div>
+                            <div class="col-12" style="display: flex; justify-content: center; align-items: center;">
+                                <button style="width: 80%;" id="showLogin">Back to Login</button>
+                            </div>
                         </div>
                     </form>
-                    <button id="showLogin">Back to Login</button>
                 </div>
             </div>
         </div>

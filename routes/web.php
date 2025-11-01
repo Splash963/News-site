@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-Route::get('/admin-dashboard', function () {
+Route::get('/admin', function () {
     return view('admin.admin-dashboard');
-})->name('admin-dashboard')->middleware('auth');
+})->name('admin')->middleware('auth');
 
 Route::get('/add-news', function () {
     return view('admin.add-news');
