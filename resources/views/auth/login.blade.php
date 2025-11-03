@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-color: #F4F6FF;
+            background-image: linear-gradient(to bottom, #134686, #F4F6FF);
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -58,9 +61,8 @@
 
         .textfields {
             background-color: transparent;
-            border-bottom: solid 2px white;
-            box-shadow: none;
-            outline: none
+            border-radius: 20px;
+            color: white;
         }
 
         .form-box {
@@ -121,13 +123,13 @@
                 <!-- Login Form -->
                 <div class="form-box login-box active row justify-content-center">
                     <div class="title mb-5">
-                        <p class="fs-1 text-white" style="display: flex; justify-content: center; align-items: center;">Login</p>
+                        <p class="fs-1 text-white" style="display: flex; justify-content: center; align-items: center; font-family: 'Poppins', sans-serif; font-weight: 400;">Login</p>
                     </div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-4" style="display: flex; align-items: center; justify-content: center; color: white;">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="textfields @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -141,7 +143,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4" style="display: flex; align-items: center; justify-content: center; color: white;">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class=" textfields @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -187,7 +189,7 @@
                 </div>
 
                 <!-- Registration Form -->
-                <div class="form-box register-box textfields row justify-content-center">
+                <div class="form-box register-box row justify-content-center">
                     <div class="title mb-5">
                         <p class="fs-1 text-white" style="display: flex; justify-content: center; align-items: center;">Registration</p>
                     </div>
