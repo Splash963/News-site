@@ -82,7 +82,7 @@
                         <div class="offcanvas-body">
                             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li class="nav-item">
-                                    <a class="nav-link {{ Request::is('admin-dashboard') ? 'active' : '' }}" aria-current="page" href="{{ route('admin-dashboard') }}">Dashboard</a>
+                                    <a class="nav-link {{ Request::is('admin') ? 'active' : '' }}" aria-current="page" href="{{ route('admin') }}">Dashboard</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link {{ Request::is('add-news') ? 'active' : '' }}" href="{{ route('add-news') }}">Add News</a>

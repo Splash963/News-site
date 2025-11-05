@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Home;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class AnnouncementController extends Controller
@@ -26,6 +27,10 @@ class AnnouncementController extends Controller
     public function destroy($id)
     {
         $announcement = Home::findOrFail($id);
+
+        if($announcement->image){
+            Storage::disk('public')->delete($announcement->image);
+        }
         $announcement->delete();
 
         return redirect()->route('announcement.index')->with('success', 'Announcement deleted successfully.');

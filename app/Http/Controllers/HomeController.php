@@ -91,8 +91,8 @@ class HomeController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = uniqid() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('news_images'), $imageName);
-            $imagePath = 'news_images/' . $imageName;
+            $image->move(public_path('storage/news_images'), $imageName);
+            $imagePath = 'storage/news_images/' . $imageName;
         }
 
         Home::create([

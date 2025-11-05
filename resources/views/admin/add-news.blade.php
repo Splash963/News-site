@@ -12,6 +12,7 @@
 
     <head>
         @include('admin.admin-layouts.offcanvas')
+        @include('layouts.spinner')
     </head>
 
     <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; margin: 0; padding: 0;">

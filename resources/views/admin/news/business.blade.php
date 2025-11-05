@@ -17,6 +17,7 @@
     <body>
         <div>
             @include('layouts.line')
+            @include('layouts.spinner')
         </div>
         <div class="text-center py-4 px-3 rounded shadow-sm">
             <h2 class="mb-0 fw-bold display-5" style="letter-spacing: 1px;">Business News</h2>

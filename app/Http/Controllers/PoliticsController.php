@@ -44,8 +44,14 @@ class PoliticsController extends Controller
 
     public function destroy($id)
     {
-        $politics = Home::findOrFail($id);
-        $politics->delete();
+        $data = Home::find($id);
+
+        $image = public_path('storage/news_images/' .$data->image_path);
+        if (file_exists($image)) {
+            unlink($image);
+        }
+
+        $data->delete();
 
         return redirect()->route('news.politics')->with('success', 'Politic News deleted successfully.');
     }

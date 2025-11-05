@@ -17,6 +17,7 @@
     <body>
         <div>
             @include('layouts.line')
+            @include('layouts.spinner')
         </div>
 
         <div class="container mt-5">

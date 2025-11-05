@@ -12,6 +12,7 @@
 
     <head>
         @include('admin.admin-layouts.offcanvas')
+        @include('layouts.spinner')
     </head>
 
     <body>
