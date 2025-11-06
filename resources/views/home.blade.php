@@ -24,7 +24,7 @@
                     <!-- Main News Section (1st on mobile, center on large screens) -->
                     <div class="col-lg-7 order-1 order-lg-1">
                         <div class="card mb-3" style="border-radius: 0;">
-                            <img src="{{ asset($main_news->image_path) }}" class="card-img-top" style="border-radius: 0;" alt="...">
+                            <img src="{{ asset('news_images/' . $main_news->image_path) }}" class="card-img-top" style="border-radius: 0;" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title fw-semibold">{{ $main_news->title }}</h5>
                                 <p class="card-text">
@@ -80,7 +80,7 @@
                     @forEach($recent_politics as $news)
                     <a href="{{route('news.show', $news->id)}}" style="text-decoration: none; color: inherit;">
                         <div class="card" style="max-width: 20rem; min-width: 20rem; border-radius: 0; min-height: 22rem;">
-                            <img src="{{ asset($news->image_path) }}" class="card-img-top" style="border-radius: 0;" alt="...">
+                            <img src="{{ asset('news_images/' . $news->image_path) }}" class="card-img-top" style="border-radius: 0;" alt="...">
                             <div class="card-body">
                                 <p class="card-text fw-semibold" style="text-align: center;">{{ $news->title }}</p>
                             </div>
@@ -102,7 +102,7 @@
                     @forEach($recent_sports as $news)
                     <a href="{{route('news.show', $news->id)}}" style="text-decoration: none; color: inherit;">
                         <div class="card" style="max-width: 20rem; min-width: 20rem; border-radius: 0; min-height: 22rem;">
-                            <img src="{{ asset($news->image_path) }}" class="card-img-top" style="border-radius: 0;" alt="...">
+                            <img src="{{ asset('news_images/' . $news->image_path) }}" class="card-img-top" style="border-radius: 0;" alt="...">
                             <div class="card-body">
                                 <p class="card-text fw-semibold" style="text-align: center;">{{ $news->title }}</p>
                             </div>
@@ -124,7 +124,7 @@
                     @foreach($recent_world as $news)
                     <a href="{{route('news.show', $news->id)}}" style="text-decoration: none; color: inherit;">
                         <div class="card" style="max-width: 20rem; min-width: 20rem; border-radius: 0; min-height: 22rem;">
-                            <img src="{{ asset($news->image_path) }}" class="card-img-top" style="border-radius: 0;" alt="...">
+                            <img src="{{ asset('news_images/' . $news->image_path) }}" class="card-img-top" style="border-radius: 0;" alt="...">
                             <div class="card-body">
                                 <p class="card-text fw-semibold" style="text-align: center;">{{ $news->title }}</p>
                             </div>

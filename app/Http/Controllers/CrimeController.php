@@ -39,8 +39,14 @@ class CrimeController extends Controller
 
     public function destroy($id)
     {
-        $crime = Home::findOrFail($id);
-        $crime->delete();
+        $data = Home::find($id);
+
+        $image = public_path('news_images/' .$data->image_path);
+        if (file_exists($image)) {
+            unlink($image);
+        }
+
+        $data->delete();
 
         return redirect()->route('news.crime')->with('success', 'Crime News deleted successfully.');
     }

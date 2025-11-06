@@ -39,9 +39,14 @@ class SportsController extends Controller
 
     public function destroy($id)
     {
-        $sports = Home::findOrFail($id);
-        $sports->delete();
+        $data = Home::find($id);
 
+        $image = public_path('news_images/' .$data->image_path);
+        if (file_exists($image)) {
+            unlink($image);
+        }
+
+        $data->delete();
         return redirect()->route('news.sports')->with('success', 'Sports News deleted successfully.');
     }
 }

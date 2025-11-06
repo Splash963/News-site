@@ -46,7 +46,7 @@ class PoliticsController extends Controller
     {
         $data = Home::find($id);
 
-        $image = public_path('storage/news_images/' .$data->image_path);
+        $image = public_path('news_images/' .$data->image_path);
         if (file_exists($image)) {
             unlink($image);
         }

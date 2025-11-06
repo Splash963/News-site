@@ -39,8 +39,14 @@ class BusinessController extends Controller
 
     public function destroy($id)
     {
-        $business = Home::findOrFail($id);
-        $business->delete();
+        $data = Home::find($id);
+
+        $image = public_path('news_images/' .$data->image_path);
+        if (file_exists($image)) {
+            unlink($image);
+        }
+
+        $data->delete();
 
         return redirect()->route('news.business')->with('success', 'Business News deleted successfully.');
     }

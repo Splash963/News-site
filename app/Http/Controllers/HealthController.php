@@ -39,9 +39,13 @@ class HealthController extends Controller
 
     public function destroy($id)
     {
-        $health = Home::findOrFail($id);
-        $health->delete();
+        $data = Home::find($id);
 
+        $image = public_path('news_images/' .$data->image_path);
+        if (file_exists($image)) {
+            unlink($image);
+        }
+        $data->delete();
         return redirect()->route('news.health')->with('success', 'Health News deleted successfully.');
     }
 }

@@ -41,9 +41,14 @@ class EducationController extends Controller
 
     public function destroy($id)
     {
-        $education = Home::findOrFail($id);
-        $education->delete();
+       $data = Home::find($id);
 
+        $image = public_path('news_images/' .$data->image_path);
+        if (file_exists($image)) {
+            unlink($image);
+        }
+
+        $data->delete();
         return redirect()->route('news.education')->with('success', 'Education News deleted successfully.');
     }
 }

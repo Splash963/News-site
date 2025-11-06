@@ -39,9 +39,14 @@ class WorldController extends Controller
 
     public function destroy($id)
     {
-        $world = Home::findOrFail($id);
-        $world->delete();
+        $data = Home::find($id);
 
+        $image = public_path('news_images/' .$data->image_path);
+        if (file_exists($image)) {
+            unlink($image);
+        }
+
+        $data->delete();
         return redirect()->route('news.world')->with('success', 'World News deleted successfully.');
     }
 }

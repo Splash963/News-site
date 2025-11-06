@@ -29,7 +29,7 @@
                 <div class="card mb-3" style="border-radius: 0;">
                     <div class="row g-0">
                         <div class="col-4">
-                            <img class="img-fluid" style="border-radius: 0;" src="{{ asset($news->image_path) }}" alt="{{ $news->title }}">
+                            <img class="img-fluid" style="border-radius: 0;" src="{{ asset('news_images/' . $news->image_path) }}" alt="{{ $news->title }}">
                         </div>
                         <div class="col-8">
                             <div class="card-body d-flex flex-column justify-content-between text-center" style="height: 120px;">

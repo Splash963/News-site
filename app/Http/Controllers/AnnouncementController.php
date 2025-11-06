@@ -27,10 +27,6 @@ class AnnouncementController extends Controller
     public function destroy($id)
     {
         $announcement = Home::findOrFail($id);
-
-        if($announcement->image){
-            Storage::disk('public')->delete($announcement->image);
-        }
         $announcement->delete();
 
         return redirect()->route('announcement.index')->with('success', 'Announcement deleted successfully.');

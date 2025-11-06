@@ -14,7 +14,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-image: linear-gradient(to bottom, #134686, #F4F6FF);
+            background-image: linear-gradient(to bottom, #b39ca0ff, #F4F6FF);
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -52,7 +52,7 @@
 
         .flex-2 {
             width: 100%;
-            background-color: #134686;
+            background-color: #DC143C;
             transition: all 0.9s ease;
             border-radius: 0 20px 20px 0;
             display: flex;
@@ -61,9 +61,16 @@
         }
 
         .textfields {
-            background-color: transparent;
+            border: solid 2px #F4F6FF;
+            background-color: #F4F6FF;
+            color: black;
             border-radius: 20px;
+        }
+
+        .labels {
             color: white;
+            display: flex;
+            align-items: center;
         }
 
         .form-box {
@@ -91,24 +98,60 @@
             color: white;
         }
 
+        button:hover {
+            background-color: white;
+            color: #DC143C;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .links{
+            color: white;
+            text-decoration: none;
+        }
+        .links:hover {
+            text-decoration: underline;
+            color: yellow;
+            text-decoration: none;
+        }
+
         @media (max-width: 768px) {
             .background {
                 flex-direction: column;
+                width: 90%;
             }
 
-            .background.reverse .flex-1 {
-                transform: translateY(100%);
+            .flex-1 {
+                display: none;
             }
 
-            .background.reverse .flex-2 {
-                transform: translateY(-100%);
-            }
-
-            .flex-1,
             .flex-2 {
+                border-radius: 20px 20px 20px 20px;
                 width: 100%;
-                height: 50%;
+                height: 100%;
             }
+
+            .textfields {
+                width: 80%;
+                border: solid 2px #F4F6FF;
+                background-color: #F4F6FF;
+                color: black;
+            }
+
+            .labels {
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .texts {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
         }
     </style>
 </head>
@@ -129,45 +172,37 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4" style="display: flex; align-items: center; justify-content: center; color: white;">{{ __('Email Address') }}</label>
+                        <div class="">
+                            <div class="row mb-3">
+                                <label for="email" class="col-md-4 labels">{{ __('Email Address') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="textfields @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <div class="col-md-6 texts">
+                                    <input id="email" type="email" class="textfields @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4" style="display: flex; align-items: center; justify-content: center; color: white;">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class=" textfields @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
+
+                            <div class="row mb-3">
+                                <label for="password" class="col-md-4 labels">{{ __('Password') }}</label>
+
+                                <div class="col-md-6 texts">
+                                    <input id="password" type="password" class=" textfields @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
                         </div>
+
 
                         <div class="row mb-0">
                             <div class="col-12 p-0" style="display: flex; justify-content: center; align-items: center;">
@@ -178,9 +213,9 @@
                             <div class="col-12 p-0" style="display: flex; justify-content: center; align-items: center;">
                                 <button id="showRegister" style="width: 80%;">Go to Registration</button>
                             </div>
-                            <div class="col-12 p-0" style="display: flex; justify-content: center; align-items: center;">
+                            <div class="col-12 p-0 mt-5 links" style="display: flex; justify-content: center; align-items: center;">
                                 @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="links" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                                 @endif
@@ -198,10 +233,10 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 labels">{{ __('Name') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            <div class="col-md-6 texts">
+                                <input id="name" type="text" class="textfields @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -212,10 +247,10 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-4 labels">{{ __('Email Address') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                            <div class="col-md-6 texts">
+                                <input id="email" type="email" class="textfields @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -226,10 +261,10 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 labels">{{ __('Password') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                            <div class="col-md-6 texts">
+                                <input id="password" type="password" class="textfields @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -240,10 +275,10 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 labels">{{ __('Confirm Password') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            <div class="col-md-6 texts">
+                                <input id="password-confirm" type="password" class="textfields" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 
@@ -265,16 +300,44 @@
 
     </div>
     <script>
+        // document.getElementById('showRegister').addEventListener('click', function() {
+        //     document.querySelector('.login-box').classList.remove('active');
+        //     document.querySelector('.register-box').classList.add('active');
+        //     document.querySelector('.background').classList.toggle('reverse');
+        // });
+
+        // document.getElementById('showLogin').addEventListener('click', function() {
+        //     document.querySelector('.register-box').classList.remove('active');
+        //     document.querySelector('.login-box').classList.add('active');
+        //     document.querySelector('.background').classList.toggle('reverse');
+        // });
+
+        const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+        function isMobileView() {
+            return mediaQuery.matches;
+        }
+
         document.getElementById('showRegister').addEventListener('click', function() {
             document.querySelector('.login-box').classList.remove('active');
             document.querySelector('.register-box').classList.add('active');
-            document.querySelector('.background').classList.toggle('reverse');
+
+            if (!isMobileView()) {
+                document.querySelector('.background').classList.add('reverse');
+            } else {
+                document.querySelector('.background').classList.remove('reverse');
+            }
         });
 
         document.getElementById('showLogin').addEventListener('click', function() {
             document.querySelector('.register-box').classList.remove('active');
             document.querySelector('.login-box').classList.add('active');
-            document.querySelector('.background').classList.toggle('reverse');
+
+            if (!isMobileView()) {
+                document.querySelector('.background').classList.remove('reverse');
+            } else {
+                document.querySelector('.background').classList.remove('reverse');
+            }
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

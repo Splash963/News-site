@@ -49,7 +49,7 @@
         <div class="card mb-3" style="max-width: 540px; border-radius: 0;">
             <div class="row g-0">
                 <div class="col">
-                    <img class="img-fluid" src="{{ asset($news->image_path) }}" style="border-radius: 0;" alt="{{ $news->title }}">
+                    <img class="img-fluid" src="{{ asset('news_images/' . $news->image_path) }}" style="border-radius: 0;" alt="{{ $news->title }}">
                 </div>
                 <div class="col">
                     <div class="card-body">

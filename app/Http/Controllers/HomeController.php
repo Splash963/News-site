@@ -91,8 +91,8 @@ class HomeController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $imageName = uniqid() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('storage/news_images'), $imageName);
-            $imagePath = 'storage/news_images/' . $imageName;
+            $image->move(public_path('news_images'), $imageName);
+            $imagePath = $imageName;
         }
 
         Home::create([
@@ -138,26 +138,21 @@ class HomeController extends Controller
 
         $update = Home::findOrFail($id);
 
-        // ✅ Handle image upload
         if ($request->hasFile('image')) {
-            // Delete old image if it exists
             if ($update->image_path && file_exists(public_path('news_images/' . $update->image_path))) {
                 unlink(public_path('news_images/' . $update->image_path));
             }
 
-            // Save new image to public/news_images
             $image = $request->file('image');
             $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('news_images'), $imageName);
 
-            // ✅ Assign to correct column name
-           $validated['image_path'] = 'news_images/' . $imageName;
+           $validated['image_path'] = $imageName;
         }
 
-        // ✅ Update model with all validated fields
         $update->update($validated);
 
-        return redirect()->route('admin-dashboard')->with('Success', 'News Update Successful!');
+        return back()->with('Success', 'News Update Successful!');
     }
 
     /**
