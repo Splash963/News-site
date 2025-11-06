@@ -111,8 +111,10 @@
                                 <li class="nav-item">
                                     <a class="nav-link {{ Request::is('show-news/health') ? 'active' : '' }}" href="{{ route('news.health') }}">Health News</a>
                                 </li>
-
-                                <li class="logout mt-5">
+                                <li class="nav-item logout mt-5">
+                                    <a class="nav-link logout-link" href="{{ route('home') }}">Home</a>
+                                </li>
+                                <li class="logout">
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>

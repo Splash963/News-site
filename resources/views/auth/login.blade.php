@@ -14,7 +14,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-image: linear-gradient(to bottom, #b39ca0ff, #F4F6FF);
+            background-image: linear-gradient(to bottom, #4c6a8eff, #F4F6FF);
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -52,7 +52,7 @@
 
         .flex-2 {
             width: 100%;
-            background-color: #DC143C;
+            background-color: #134686;
             transition: all 0.9s ease;
             border-radius: 0 20px 20px 0;
             display: flex;
@@ -100,7 +100,7 @@
 
         button:hover {
             background-color: white;
-            color: #DC143C;
+            color: #134686;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -111,8 +111,20 @@
         }
         .links:hover {
             text-decoration: underline;
-            color: yellow;
+            color: #F5AD18;
             text-decoration: none;
+        }
+
+        @media (max-width: 960px) {
+            .labels {
+                font-size: 12px;
+                display: flex;
+                padding-left: 35px;
+            }
+            .flex-1{
+                display: flex;
+                align-items: center;
+            }
         }
 
         @media (max-width: 768px) {
@@ -143,6 +155,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                padding: 0;
             }
 
             .texts {
@@ -226,7 +239,7 @@
 
                 <!-- Registration Form -->
                 <div class="form-box register-box row justify-content-center">
-                    <div class="title mb-5">
+                    <div class="title mb-3">
                         <p class="fs-1 text-white" style="display: flex; justify-content: center; align-items: center;">Registration</p>
                     </div>
                     <form method="POST" action="{{ route('register') }}">
@@ -274,7 +287,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
+                        <div class="row mb-1">
                             <label for="password-confirm" class="col-md-4 labels">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-6 texts">
@@ -300,18 +313,6 @@
 
     </div>
     <script>
-        // document.getElementById('showRegister').addEventListener('click', function() {
-        //     document.querySelector('.login-box').classList.remove('active');
-        //     document.querySelector('.register-box').classList.add('active');
-        //     document.querySelector('.background').classList.toggle('reverse');
-        // });
-
-        // document.getElementById('showLogin').addEventListener('click', function() {
-        //     document.querySelector('.register-box').classList.remove('active');
-        //     document.querySelector('.login-box').classList.add('active');
-        //     document.querySelector('.background').classList.toggle('reverse');
-        // });
-
         const mediaQuery = window.matchMedia("(max-width: 768px)");
 
         function isMobileView() {
