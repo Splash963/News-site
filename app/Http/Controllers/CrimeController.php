@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Home;
 use Illuminate\Http\Request;
 
@@ -19,13 +20,16 @@ class CrimeController extends Controller
         return view('crime', compact('main_news', 'recent_news', 'all_news'));
     }
 
-    public function all_data(){
-        return Home::where('category','crime')->paginate(10);
+    public function all_data()
+    {
+        return Home::where('category', 'crime')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
     }
 
     public function getRecentNews()
     {
-        return Home::where('category','crime')
+        return Home::where('category', 'crime')
             ->orderBy('created_at', 'desc')
             ->take(5)
             ->get();
@@ -41,7 +45,7 @@ class CrimeController extends Controller
     {
         $data = Home::find($id);
 
-        $image = public_path('news_images/' .$data->image_path);
+        $image = public_path('news_images/' . $data->image_path);
         if (file_exists($image)) {
             unlink($image);
         }

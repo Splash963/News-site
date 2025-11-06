@@ -19,11 +19,6 @@ class AnnouncementController extends Controller
        
     }
 
-    public function update(Request $request, Home $news)
-    {
-        return "Update method in AnnouncementController called.";
-    }
-
     public function destroy($id)
     {
         $announcement = Home::findOrFail($id);

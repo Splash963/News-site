@@ -23,7 +23,9 @@ class NewsController extends Controller
 
     public function all_data()
     {
-        return Home::where('category', '!=', 'announcement')->paginate(10);
+        return Home::where('category', '!=', 'announcement')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
     }
 
     public function getRecentNews()

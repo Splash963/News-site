@@ -22,7 +22,9 @@ class EducationController extends Controller
 
     public function all_data()
     {
-        return Home::where('category', 'education')->paginate(10);
+        return Home::where('category', 'education')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
     }
 
     public function getRecentNews()
@@ -41,9 +43,9 @@ class EducationController extends Controller
 
     public function destroy($id)
     {
-       $data = Home::find($id);
+        $data = Home::find($id);
 
-        $image = public_path('news_images/' .$data->image_path);
+        $image = public_path('news_images/' . $data->image_path);
         if (file_exists($image)) {
             unlink($image);
         }

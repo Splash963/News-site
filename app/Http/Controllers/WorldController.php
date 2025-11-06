@@ -20,7 +20,9 @@ class WorldController extends Controller
     }
 
     public function all_data(){
-        return Home::where('category','world-news')->paginate(10);
+        return Home::where('category','world-news')
+        ->orderBy('created_at', 'desc')
+        ->paginate(10);
     }
 
     public function getRecentNews()
