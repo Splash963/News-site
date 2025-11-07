@@ -36,7 +36,7 @@ Route::post('/logout', function (Request $request) {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/news', [NewsController::class, 'index'])->name('news');
 
-
+// Admin Show Data Routes
 Route::get('/show-news/politics', [PoliticsController::class, 'view_data'])->name('news.politics');
 Route::get('/show-news/crime', [CrimeController::class, 'view_data'])->name('news.crime');
 Route::get('/show-news/sports', [SportsController::class, 'view_data'])->name('news.sports');
@@ -45,6 +45,7 @@ Route::get('/show-news/business', [BusinessController::class, 'view_data'])->nam
 Route::get('/show-news/education', [EducationController::class, 'view_data'])->name('news.education');
 Route::get('/show-news/health', [HealthController::class, 'view_data'])->name('news.health');
 
+// User View Data Routes
 Route::resource('home', HomeController::class);
 Route::resource('announcement', AnnouncementController::class);
 Route::resource('politics', PoliticsController::class);
@@ -55,8 +56,10 @@ Route::resource('business', BusinessController::class);
 Route::resource('education', EducationController::class);
 Route::resource('health', HealthController::class);
 
-
+// Clicked Data showing Route
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
+
+// Middleware Routes
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

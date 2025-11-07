@@ -7,6 +7,17 @@
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        .recent-news-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.20);
+        }
+
+        .recent-news-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    </style>
 </head>
 
 <body>
@@ -79,7 +90,7 @@
                 <div class="d-flex flex-nowrap overflow-auto py-3" style="gap: 1rem; scrollbar-width: thin;">
                     @forEach($recent_politics as $news)
                     <a href="{{route('news.show', $news->id)}}" style="text-decoration: none; color: inherit;">
-                        <div class="card" style="max-width: 20rem; min-width: 20rem; border-radius: 0; min-height: 22rem;">
+                        <div class="card recent-news-card" style="max-width: 20rem; min-width: 20rem; border-radius: 0; min-height: 22rem;">
                             <img src="{{ asset('news_images/' . $news->image_path) }}" class="card-img-top" style="border-radius: 0;" alt="...">
                             <div class="card-body">
                                 <p class="card-text fw-semibold" style="text-align: center;">{{ $news->title }}</p>
@@ -101,7 +112,7 @@
                 <div class="d-flex flex-nowrap overflow-auto py-3" style="gap: 1rem; scrollbar-width: thin;">
                     @forEach($recent_sports as $news)
                     <a href="{{route('news.show', $news->id)}}" style="text-decoration: none; color: inherit;">
-                        <div class="card" style="max-width: 20rem; min-width: 20rem; border-radius: 0; min-height: 22rem;">
+                        <div class="card recent-news-card" style="max-width: 20rem; min-width: 20rem; border-radius: 0; min-height: 22rem;">
                             <img src="{{ asset('news_images/' . $news->image_path) }}" class="card-img-top" style="border-radius: 0;" alt="...">
                             <div class="card-body">
                                 <p class="card-text fw-semibold" style="text-align: center;">{{ $news->title }}</p>
@@ -123,7 +134,7 @@
                 <div class="d-flex flex-nowrap overflow-auto py-3" style="gap: 1rem; scrollbar-width: thin;">
                     @foreach($recent_world as $news)
                     <a href="{{route('news.show', $news->id)}}" style="text-decoration: none; color: inherit;">
-                        <div class="card" style="max-width: 20rem; min-width: 20rem; border-radius: 0; min-height: 22rem;">
+                        <div class="card recent-news-card" style="max-width: 20rem; min-width: 20rem; border-radius: 0; min-height: 22rem;">
                             <img src="{{ asset('news_images/' . $news->image_path) }}" class="card-img-top" style="border-radius: 0;" alt="...">
                             <div class="card-body">
                                 <p class="card-text fw-semibold" style="text-align: center;">{{ $news->title }}</p>
